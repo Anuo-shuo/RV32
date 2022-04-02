@@ -104,7 +104,7 @@ int main(void)
 
 
     gpio_enable_output(GPIOB, SOC_LED_GPIO_MASK|LED0|BEEP);
-    /*gpio_toggle(GPIOB, SOC_LED_5_GPIO_MASK);
+   /* gpio_toggle(GPIOB, SOC_LED_5_GPIO_MASK);
     gpio_toggle(GPIOB, SOC_LED_4_GPIO_MASK);
     gpio_toggle(GPIOB, SOC_LED_3_GPIO_MASK);
     gpio_toggle(GPIOB, SOC_LED_2_GPIO_MASK);
@@ -112,9 +112,9 @@ int main(void)
     gpio_toggle(GPIOB, SOC_LED_0_GPIO_MASK);
     gpio_toggle(GPIOB, SOC_LED_6_GPIO_MASK);
     gpio_toggle(GPIOB, SOC_LED_7_GPIO_MASK);*/
-    //gpio_toggle(GPIOB, SOC_LED_GPIO_MASK|LED0|BEEP);
+   // gpio_toggle(GPIOB, SOC_LED_GPIO_MASK|LED0|BEEP);
     gpio_toggle(GPIOB, LED0);
-    printf("All LEDs Toggled \r\n");
+    printf("LED0 Toggled \r\n");
 
     for (int i = 0; i < 20; i ++) {
         printf("%d: Hello World From RISC-V Processor!\r\n", i);

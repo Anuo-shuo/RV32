@@ -7,8 +7,8 @@ start address 0x80000000
 
 Program Header:
     LOAD off    0x00001000 vaddr 0x80000000 paddr 0x80000000 align 2**12
-         filesz 0x000024e0 memsz 0x000024e0 flags r-x
-    LOAD off    0x00004000 vaddr 0x90000000 paddr 0x800024e0 align 2**12
+         filesz 0x000024dc memsz 0x000024dc flags r-x
+    LOAD off    0x00004000 vaddr 0x90000000 paddr 0x800024dc align 2**12
          filesz 0x00000074 memsz 0x00000074 flags rw-
     LOAD off    0x00000074 vaddr 0x90000074 paddr 0x90000074 align 2**12
          filesz 0x00000000 memsz 0x00000154 flags rw-
@@ -20,10 +20,10 @@ Idx Name              Size      VMA       LMA       File off  Algn  Flags
   0 .init             000000b4  80000000  80000000  00001000  2**0  CONTENTS, ALLOC, LOAD, READONLY, CODE
   1 .ilalign          00000000  800000b4  800000b4  00004074  2**0  CONTENTS
   2 .text             00002062  800000b4  800000b4  000010b4  2**2  CONTENTS, ALLOC, LOAD, READONLY, CODE
-  3 .rodata           000003c8  80002118  80002118  00003118  2**2  CONTENTS, ALLOC, LOAD, READONLY, DATA
-  4 .lalign           00000000  800024e0  800024e0  00004074  2**0  CONTENTS
+  3 .rodata           000003c4  80002118  80002118  00003118  2**2  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .lalign           00000000  800024dc  800024dc  00004074  2**0  CONTENTS
   5 .dalign           00000000  90000000  90000000  00004074  2**0  CONTENTS
-  6 .data             00000074  90000000  800024e0  00004000  2**2  CONTENTS, ALLOC, LOAD, DATA
+  6 .data             00000074  90000000  800024dc  00004000  2**2  CONTENTS, ALLOC, LOAD, DATA
   7 .bss              00000154  90000074  90000074  00004074  2**2  ALLOC
   8 .stack            00000800  9000f800  900001c8  00004800  2**0  ALLOC
   9 .debug_info       00003877  00000000  00000000  00004074  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -31,17 +31,17 @@ Idx Name              Size      VMA       LMA       File off  Algn  Flags
  11 .debug_loc        00002089  00000000  00000000  00008c69  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
  12 .debug_aranges    000003a0  00000000  00000000  0000acf8  2**3  CONTENTS, READONLY, DEBUGGING, OCTETS
  13 .debug_ranges     00000488  00000000  00000000  0000b098  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_line       000041d3  00000000  00000000  0000b520  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_str        000013bc  00000000  00000000  0000f6f3  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .comment          00000012  00000000  00000000  00010aaf  2**0  CONTENTS, READONLY
- 17 .riscv.attributes 0000002f  00000000  00000000  00010ac1  2**0  CONTENTS, READONLY
- 18 .debug_frame      00000554  00000000  00000000  00010af0  2**2  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 14 .debug_line       0000416f  00000000  00000000  0000b520  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 15 .debug_str        000013b2  00000000  00000000  0000f68f  2**0  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 16 .comment          00000012  00000000  00000000  00010a41  2**0  CONTENTS, READONLY
+ 17 .riscv.attributes 0000002f  00000000  00000000  00010a53  2**0  CONTENTS, READONLY
+ 18 .debug_frame      00000554  00000000  00000000  00010a84  2**2  CONTENTS, READONLY, DEBUGGING, OCTETS
 SYMBOL TABLE:
 80000000 l    d  .init	00000000 .init
 800000b4 l    d  .ilalign	00000000 .ilalign
 800000b4 l    d  .text	00000000 .text
 80002118 l    d  .rodata	00000000 .rodata
-800024e0 l    d  .lalign	00000000 .lalign
+800024dc l    d  .lalign	00000000 .lalign
 90000000 l    d  .dalign	00000000 .dalign
 90000000 l    d  .data	00000000 .data
 90000074 l    d  .bss	00000000 .bss
@@ -120,12 +120,12 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 impure.c
 90000000 l     O .data	00000060 impure_data
 00000000 l    df *ABS*	00000000 
-800024e0 l       .rodata	00000000 __fini_array_end
-800024e0 l       .rodata	00000000 __fini_array_start
-800024e0 l       .rodata	00000000 __init_array_end
-800024e0 l       .rodata	00000000 __preinit_array_end
-800024e0 l       .rodata	00000000 __init_array_start
-800024e0 l       .rodata	00000000 __preinit_array_start
+800024dc l       .rodata	00000000 __fini_array_end
+800024dc l       .rodata	00000000 __fini_array_start
+800024dc l       .rodata	00000000 __init_array_end
+800024dc l       .rodata	00000000 __preinit_array_end
+800024dc l       .rodata	00000000 __init_array_start
+800024dc l       .rodata	00000000 __preinit_array_start
 80001fe0 g     F .text	00000028 _isatty_r
 800001a4  w    F .text	00000004 _getpid
 80000c7e g     F .text	000000da _puts_r
@@ -142,12 +142,12 @@ SYMBOL TABLE:
 90000074 g     O .bss	00000004 errno
 00000800 g       *ABS*	00000000 __stack_size
 80000354 g     F .text	00000014 uart_write
-800024e0 g       .rodata	00000000 __rt_init_start
-800024e0 g       .rodata	00000000 __fsymtab_end
+800024dc g       .rodata	00000000 __rt_init_start
+800024dc g       .rodata	00000000 __fsymtab_end
 800000b4 g       .ilalign	00000000 _ilm_lma
 800012fa g     F .text	0000000a _cleanup_r
 80000d58 g     F .text	00000008 puts
-800024e0 g       .rodata	00000000 __rt_init_end
+800024dc g       .rodata	00000000 __rt_init_end
 90000064 g     O .data	00000004 SystemCoreClock
 80000308 g     F .text	00000012 gpio_toggle
 800015ce g     F .text	00000008 malloc
@@ -159,7 +159,7 @@ SYMBOL TABLE:
 80002112 g     F .text	00000004 _getpid_r
 80001e72 g     F .text	00000028 _sbrk_r
 80002052 g     F .text	0000002c _read_r
-800024e0 g       .rodata	00000000 _eilm
+800024dc g       .rodata	00000000 _eilm
 9000f800 g       .stack	00000000 _heap_end
 800001a8  w    F .text	00000004 _isatty
 90000070 g     O .data	00000004 _global_impure_ptr
@@ -172,7 +172,7 @@ SYMBOL TABLE:
 800000b4 g       .ilalign	00000000 _ilm
 80000522 g     F .text	000000e6 _premain_init
 80001446 g     F .text	00000024 fprintf
-800023ec g     O .rodata	00000020 __sf_fake_stderr
+800023e8 g     O .rodata	00000020 __sf_fake_stderr
 80000492 g     F .text	00000090 core_trap_handler
 80001820 g     F .text	00000042 __sfputs_r
 8000031a g     F .text	0000003a uart_init
@@ -190,7 +190,7 @@ SYMBOL TABLE:
 80001e9a g     F .text	00000030 __sread
 8000204e g     F .text	00000002 __malloc_lock
 8000122e g     F .text	00000064 _fflush_r
-8000240c g     O .rodata	00000020 __sf_fake_stdin
+80002408 g     O .rodata	00000020 __sf_fake_stdin
 90000074 g       .bss	00000000 __bss_start
 800015d6 g     F .text	000000a8 memset
 800000b4 g     F .text	000000c6 main
@@ -198,11 +198,11 @@ SYMBOL TABLE:
 80000d60 g     F .text	00000072 srand
 80001f4e g     F .text	00000006 __sclose
 80001720 g     F .text	000000d6 _malloc_r
-800024e0 g       .rodata	00000000 __vsymtab_start
+800024dc g       .rodata	00000000 __vsymtab_start
 80000484 g     F .text	0000000e SystemInit
 8000060c g     F .text	00000002 _fini
 80000c44 g     F .text	0000003a iprintf
-80002240 g     O .rodata	00000100 .hidden __clz_tab
+8000223c g     O .rodata	00000100 .hidden __clz_tab
 800002f6 g     F .text	00000012 gpio_enable_output
 80000ba6 g     F .text	0000000a atexit
 80001f54 g     F .text	0000002c _write_r
@@ -210,21 +210,21 @@ SYMBOL TABLE:
 90000068 g     O .data	00000004 _impure_ptr
 800010e8 g     F .text	00000146 __sflush_r
 90000000 g       .dalign	00000000 _data
-800024e0 g       .rodata	00000000 __vsymtab_end
+800024dc g       .rodata	00000000 __vsymtab_end
 8000037e g     F .text	00000068 measure_cpu_freq
 800014d4 g     F .text	0000005c __swhatbuf_r
 80000208  w    F .text	00000062 _write
 90000074 g       .bss	00000000 _edata
 80000608 g     F .text	00000002 _postmain_fini
 900001c8 g       .bss	00000000 _end
-800024e0 g       .lalign	00000000 _data_lma
+800024dc g       .lalign	00000000 _data_lma
 80000368 g     F .text	00000016 uart_read
 80001eca g     F .text	0000004e __swrite
 80001446 g     F .text	00000024 fiprintf
 80001862 g     F .text	00000294 _vfiprintf_r
 8000146a g     F .text	0000006a _fwalk_reent
 800001ac  w    F .text	0000000a _kill
-8000242c g     O .rodata	00000020 __sf_fake_stdout
+80002428 g     O .rodata	00000020 __sf_fake_stdout
 8000060e g     F .text	00000238 print_misa
 800001ba  w    F .text	00000022 _read
 80000184  w    F .text	00000006 _exit
@@ -232,7 +232,7 @@ SYMBOL TABLE:
 80001c02 g     F .text	00000270 _printf_i
 90000080 g     O .bss	00000004 __malloc_sbrk_start
 9000007c g     O .bss	00000004 __malloc_free_list
-800024e0 g       .rodata	00000000 __fsymtab_start
+800024dc g       .rodata	00000000 __fsymtab_start
 80001862 g     F .text	00000294 _vfprintf_r
 800002e4 g     F .text	00000012 gpio_iof_config
 800020e0 g     F .text	00000008 raise
@@ -244,7 +244,7 @@ Disassembly of section .init:
 
 80000000 <_start>:
 _start():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:40
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:40
  * Reset Handler called on controller reset
  */
 _start:
@@ -252,11 +252,11 @@ _start:
     /* Disable Global Interrupt */
     csrc CSR_MSTATUS, MSTATUS_MIE
 80000000:	30047073          	csrci	mstatus,8
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:42
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:42
     /* Disable all interrupts controlled by CSR MIE */
     csrw CSR_MIE, 0x0
 80000004:	30405073          	csrwi	mie,0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:47
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:47
 
     /* Initialize GP and Stack Pointer SP */
     .option push
@@ -264,12 +264,12 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
     la gp, __global_pointer$
 80000008:	10001197          	auipc	gp,0x10001
 8000000c:	85818193          	addi	gp,gp,-1960 # 90000860 <__global_pointer$>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:49
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:49
     .option pop
     la sp, _sp
 80000010:	10010117          	auipc	sp,0x10010
 80000014:	ff010113          	addi	sp,sp,-16 # 90010000 <_sp>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:54
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:54
 
     /*
      * Set Trap Entry MTVEC to trap_entry
@@ -277,15 +277,15 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
     la t0, trap_entry
 80000018:	00000297          	auipc	t0,0x0
 8000001c:	25428293          	addi	t0,t0,596 # 8000026c <trap_entry>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:55
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:55
     csrw CSR_MTVEC, t0
 80000020:	30529073          	csrw	mtvec,t0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:58
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:58
 
     /* Direct Mode: All exceptions set pc to BASE. */
     csrc CSR_MTVEC, 0x3
 80000024:	3051f073          	csrci	mtvec,3
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:74
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:74
     /* ===== Startup Stage 3 ===== */
     /*
      * Load code section frm FLASH to ILM
@@ -294,93 +294,93 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
     la a0, _ilm_lma
 80000028:	00000517          	auipc	a0,0x0
 8000002c:	08c50513          	addi	a0,a0,140 # 800000b4 <main>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:75
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:75
     la a1, _ilm
 80000030:	00000597          	auipc	a1,0x0
 80000034:	08458593          	addi	a1,a1,132 # 800000b4 <main>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:77
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:77
     /* If the ILM phy-address same as the logic-address, then quit */
     beq a0, a1, 2f
 80000038:	02b50063          	beq	a0,a1,80000058 <_start+0x58>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:78
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:78
     la a2, _eilm
 8000003c:	00002617          	auipc	a2,0x2
-80000040:	4a460613          	addi	a2,a2,1188 # 800024e0 <__fsymtab_end>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:79
+80000040:	4a060613          	addi	a2,a2,1184 # 800024dc <__fsymtab_end>
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:79
     bgeu a1, a2, 2f
 80000044:	00c5fa63          	bgeu	a1,a2,80000058 <_start+0x58>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:83
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:83
 
 1:
     /* Load code section if necessary */
     lw t0, (a0)
 80000048:	00052283          	lw	t0,0(a0)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:84
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:84
     sw t0, (a1)
 8000004c:	0055a023          	sw	t0,0(a1)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:85
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:85
     addi a0, a0, 4
 80000050:	0511                	addi	a0,a0,4
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:86
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:86
     addi a1, a1, 4
 80000052:	0591                	addi	a1,a1,4
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:87
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:87
     bltu a1, a2, 1b
 80000054:	fec5eae3          	bltu	a1,a2,80000048 <_start+0x48>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:90
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:90
 2:
     /* Load data section */
     la a0, _data_lma
 80000058:	00002517          	auipc	a0,0x2
-8000005c:	48850513          	addi	a0,a0,1160 # 800024e0 <__fsymtab_end>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:91
+8000005c:	48450513          	addi	a0,a0,1156 # 800024dc <__fsymtab_end>
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:91
     la a1, _data
 80000060:	10000597          	auipc	a1,0x10000
 80000064:	fa058593          	addi	a1,a1,-96 # 90000000 <impure_data>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:92
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:92
     la a2, _edata
 80000068:	81418613          	addi	a2,gp,-2028 # 90000074 <errno>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:93
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:93
     bgeu a1, a2, 2f
 8000006c:	00c5fa63          	bgeu	a1,a2,80000080 <_start+0x80>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:95
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:95
 1:
     lw t0, (a0)
 80000070:	00052283          	lw	t0,0(a0)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:96
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:96
     sw t0, (a1)
 80000074:	0055a023          	sw	t0,0(a1)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:97
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:97
     addi a0, a0, 4
 80000078:	0511                	addi	a0,a0,4
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:98
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:98
     addi a1, a1, 4
 8000007a:	0591                	addi	a1,a1,4
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:99
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:99
     bltu a1, a2, 1b
 8000007c:	fec5eae3          	bltu	a1,a2,80000070 <_start+0x70>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:102
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:102
 2:
     /* Clear bss section */
     la a0, __bss_start
 80000080:	81418513          	addi	a0,gp,-2028 # 90000074 <errno>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:103
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:103
     la a1, _end
 80000084:	96818593          	addi	a1,gp,-1688 # 900001c8 <_end>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:104
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:104
     bgeu a0, a1, 2f
 80000088:	00b57763          	bgeu	a0,a1,80000096 <_start+0x96>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:106
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:106
 1:
     sw zero, (a0)
 8000008c:	00052023          	sw	zero,0(a0)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:107
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:107
     addi a0, a0, 4
 80000090:	0511                	addi	a0,a0,4
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:108
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:108
     bltu a0, a1, 1b
 80000092:	feb56de3          	bltu	a0,a1,8000008c <_start+0x8c>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:115
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:115
 
     /*
      * Call vendor defined SystemInit to
@@ -388,33 +388,33 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
      */
     call SystemInit
 80000096:	26fd                	jal	80000484 <SystemInit>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:118
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:118
 
     /* Call global constructors */
     la a0, __libc_fini_array
 80000098:	00001517          	auipc	a0,0x1
 8000009c:	b1850513          	addi	a0,a0,-1256 # 80000bb0 <__libc_fini_array>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:119
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:119
     call atexit
 800000a0:	307000ef          	jal	ra,80000ba6 <atexit>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:121
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:121
     /* Call C/C++ constructor start up code */
     call __libc_init_array
 800000a4:	343000ef          	jal	ra,80000be6 <__libc_init_array>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:124
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:124
 
     /* do pre-init steps before main */
     call _premain_init
 800000a8:	29ad                	jal	80000522 <_premain_init>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:127
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:127
     /* ===== Call Main Function  ===== */
     /* argc = argv = 0 */
     li a0, 0
 800000aa:	4501                	li	a0,0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:128
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:128
     li a1, 0
 800000ac:	4581                	li	a1,0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:134
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:134
 
 #ifdef RTOS_RTTHREAD
     // Call entry function when using RT-Thread
@@ -422,12 +422,12 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 #else
     call main
 800000ae:	2019                	jal	800000b4 <main>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:137
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:137
 #endif
     /* do post-main steps after main */
     call _postmain_fini
 800000b0:	2ba1                	jal	80000608 <_postmain_fini>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:140
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.S:140
 
 1:
     j 1b
@@ -437,7 +437,7 @@ Disassembly of section .text:
 
 800000b4 <main>:
 main():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:84
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:84
 
     printf("MISA: RV%s\r\n", misa_chars);
 }
@@ -450,7 +450,7 @@ int main(void)
 800000ba:	d226                	sw	s1,36(sp)
 800000bc:	d04a                	sw	s2,32(sp)
 __get_rv_cycle():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:492
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:492
 {
 #if __RISCV_XLEN == 32
     volatile uint32_t high0, low, high;
@@ -459,30 +459,30 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/co
     high0 = __RV_CSR_READ(CSR_MCYCLEH);
 800000be:	b80027f3          	csrr	a5,mcycleh
 800000c2:	ca3e                	sw	a5,20(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:493
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:493
     low = __RV_CSR_READ(CSR_MCYCLE);
 800000c4:	b00027f3          	csrr	a5,mcycle
 800000c8:	cc3e                	sw	a5,24(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:494
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:494
     high = __RV_CSR_READ(CSR_MCYCLEH);
 800000ca:	b80027f3          	csrr	a5,mcycleh
 800000ce:	ce3e                	sw	a5,28(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:495
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:495
     if (high0 != high) {
 800000d0:	4752                	lw	a4,20(sp)
 800000d2:	47f2                	lw	a5,28(sp)
 800000d4:	00f70563          	beq	a4,a5,800000de <main+0x2a>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:496
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:496
         low = __RV_CSR_READ(CSR_MCYCLE);
 800000d8:	b00027f3          	csrr	a5,mcycle
 800000dc:	cc3e                	sw	a5,24(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:498
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:498
     }
     full = (((uint64_t)high) << 32) | low;
 800000de:	47f2                	lw	a5,28(sp)
 800000e0:	47e2                	lw	a5,24(sp)
 __get_rv_instret():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:519
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:519
 {
 #if __RISCV_XLEN == 32
     volatile uint32_t high0, low, high;
@@ -491,51 +491,51 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/co
     high0 = __RV_CSR_READ(CSR_MINSTRETH);
 800000e2:	b8202773          	csrr	a4,minstreth
 800000e6:	c43a                	sw	a4,8(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:520
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:520
     low = __RV_CSR_READ(CSR_MINSTRET);
 800000e8:	b0202773          	csrr	a4,minstret
 800000ec:	c63a                	sw	a4,12(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:521
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:521
     high = __RV_CSR_READ(CSR_MINSTRETH);
 800000ee:	b8202773          	csrr	a4,minstreth
 800000f2:	c83a                	sw	a4,16(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:522
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:522
     if (high0 != high) {
 800000f4:	46a2                	lw	a3,8(sp)
 800000f6:	4742                	lw	a4,16(sp)
 800000f8:	00e68563          	beq	a3,a4,80000102 <main+0x4e>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:523
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:523
         low = __RV_CSR_READ(CSR_MINSTRET);
 800000fc:	b0202773          	csrr	a4,minstret
 80000100:	c63a                	sw	a4,12(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:525
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:525
     }
     full = (((uint64_t)high) << 32) | low;
 80000102:	4742                	lw	a4,16(sp)
 80000104:	4732                	lw	a4,12(sp)
 main():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:85
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:85
     srand(__get_rv_cycle()  | __get_rv_instret() | __RV_CSR_READ(CSR_MCYCLE));
 80000106:	b0002573          	csrr	a0,mcycle
 8000010a:	8fd9                	or	a5,a5,a4
 8000010c:	8d5d                	or	a0,a0,a5
 8000010e:	453000ef          	jal	ra,80000d60 <srand>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:86
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:86
     uint32_t rval = rand();
 80000112:	4c1000ef          	jal	ra,80000dd2 <rand>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:87
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:87
     rv_csr_t misa = __RV_CSR_READ(CSR_MISA);
 80000116:	301025f3          	csrr	a1,misa
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:89
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:89
 
     printf("MISA: 0x%lx\r\n", misa);
 8000011a:	00002517          	auipc	a0,0x2
 8000011e:	0d650513          	addi	a0,a0,214 # 800021f0 <_getpid_r+0xde>
 80000122:	323000ef          	jal	ra,80000c44 <iprintf>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:90
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:90
     print_misa();
 80000126:	21e5                	jal	8000060e <print_misa>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:94
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:94
 
 
 
@@ -543,7 +543,7 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:94
 80000128:	ff0005b7          	lui	a1,0xff000
 8000012c:	10012537          	lui	a0,0x10012
 80000130:	22d9                	jal	800002f6 <gpio_enable_output>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:106
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:106
     gpio_toggle(GPIOA, SOC_LED_6_GPIO_MASK);
     gpio_toggle(GPIOA, SOC_LED_7_GPIO_MASK);*/
    // gpio_toggle(GPIOA, SOC_LED_GPIO_MASK);
@@ -553,46 +553,46 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:106
 80000132:	ff0305b7          	lui	a1,0xff030
 80000136:	10040537          	lui	a0,0x10040
 8000013a:	2a75                	jal	800002f6 <gpio_enable_output>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:116
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:116
     gpio_toggle(GPIOB, SOC_LED_1_GPIO_MASK);
     gpio_toggle(GPIOB, SOC_LED_0_GPIO_MASK);
     gpio_toggle(GPIOB, SOC_LED_6_GPIO_MASK);
     gpio_toggle(GPIOB, SOC_LED_7_GPIO_MASK);*/
-    //gpio_toggle(GPIOB, SOC_LED_GPIO_MASK|LED0|BEEP);
+   // gpio_toggle(GPIOB, SOC_LED_GPIO_MASK|LED0|BEEP);
     gpio_toggle(GPIOB, LED0);
 8000013c:	000205b7          	lui	a1,0x20
 80000140:	10040537          	lui	a0,0x10040
 80000144:	22d1                	jal	80000308 <gpio_toggle>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:117
-    printf("All LEDs Toggled \r\n");
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:117
+    printf("LED0 Toggled \r\n");
 80000146:	00002517          	auipc	a0,0x2
 8000014a:	0ba50513          	addi	a0,a0,186 # 80002200 <_getpid_r+0xee>
 8000014e:	40b000ef          	jal	ra,80000d58 <puts>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:119
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:119
 
     for (int i = 0; i < 20; i ++) {
 80000152:	4401                	li	s0,0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:120
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:120
         printf("%d: Hello World From RISC-V Processor!\r\n", i);
 80000154:	00002917          	auipc	s2,0x2
-80000158:	0c090913          	addi	s2,s2,192 # 80002214 <_getpid_r+0x102>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:119
+80000158:	0bc90913          	addi	s2,s2,188 # 80002210 <_getpid_r+0xfe>
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:119
     for (int i = 0; i < 20; i ++) {
 8000015c:	44d1                	li	s1,20
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:120 (discriminator 3)
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:120 (discriminator 3)
         printf("%d: Hello World From RISC-V Processor!\r\n", i);
 8000015e:	85a2                	mv	a1,s0
 80000160:	854a                	mv	a0,s2
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:119 (discriminator 3)
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:119 (discriminator 3)
     for (int i = 0; i < 20; i ++) {
 80000162:	0405                	addi	s0,s0,1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:120 (discriminator 3)
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:120 (discriminator 3)
         printf("%d: Hello World From RISC-V Processor!\r\n", i);
 80000164:	2e1000ef          	jal	ra,80000c44 <iprintf>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:119 (discriminator 3)
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:119 (discriminator 3)
     for (int i = 0; i < 20; i ++) {
 80000168:	fe941be3          	bne	s0,s1,8000015e <main+0xaa>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:123
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:123
     }
     return 0;
 }
@@ -606,7 +606,7 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:123
 
 8000017a <_close>:
 _close():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/close.c:10
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/close.c:10
 #undef errno
 extern int errno;
 
@@ -615,7 +615,7 @@ __WEAK int _close(int fd)
     errno = EBADF;
 8000017a:	47a5                	li	a5,9
 8000017c:	80f1aa23          	sw	a5,-2028(gp) # 90000074 <errno>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/close.c:12
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/close.c:12
     return -1;
 }
 80000180:	557d                	li	a0,-1
@@ -623,7 +623,7 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 
 80000184 <_exit>:
 __WFI():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:598 (discriminator 1)
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_base.h:598 (discriminator 1)
  * the hardware platform that suitable interrupts should
  * preferentially be routed to this hart.
  */
@@ -635,7 +635,7 @@ __STATIC_FORCEINLINE void __WFI(void)
 
 8000018a <_fstat>:
 _fstat():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/fstat.c:12
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/fstat.c:12
 #undef errno
 extern int errno;
 
@@ -645,30 +645,30 @@ __WEAK int _fstat(int file, struct stat *st)
 8000018a:	157d                	addi	a0,a0,-1
 8000018c:	4785                	li	a5,1
 8000018e:	00a7e663          	bltu	a5,a0,8000019a <_fstat+0x10>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/fstat.c:13
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/fstat.c:13
         st->st_mode = S_IFCHR;
 80000192:	6789                	lui	a5,0x2
 80000194:	c1dc                	sw	a5,4(a1)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/fstat.c:14
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/fstat.c:14
         return 0;
 80000196:	4501                	li	a0,0
 80000198:	8082                	ret
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/fstat.c:16
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/fstat.c:16
     } else {
         errno = EBADF;
 8000019a:	47a5                	li	a5,9
 8000019c:	80f1aa23          	sw	a5,-2028(gp) # 90000074 <errno>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/fstat.c:17
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/fstat.c:17
         return -1;
 800001a0:	557d                	li	a0,-1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/fstat.c:19
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/fstat.c:19
     }
 }
 800001a2:	8082                	ret
 
 800001a4 <_getpid>:
 _getpid():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/getpid.c:8
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/getpid.c:8
 #include <errno.h>
 
 __WEAK int _getpid(void)
@@ -680,7 +680,7 @@ __WEAK int _getpid(void)
 
 800001a8 <_isatty>:
 _isatty():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/isatty.c:8
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/isatty.c:8
 #include <unistd.h>
 
 __WEAK int _isatty(int fd)
@@ -692,7 +692,7 @@ __WEAK int _isatty(int fd)
 
 800001ac <_kill>:
 _kill():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/kill.c:9
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/kill.c:9
 #undef errno
 extern int errno;
 
@@ -701,7 +701,7 @@ __WEAK int _kill(int pid, int sig)
     errno = EINVAL;
 800001ac:	47d9                	li	a5,22
 800001ae:	80f1aa23          	sw	a5,-2028(gp) # 90000074 <errno>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/kill.c:11
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/kill.c:11
     return -1;
 }
 800001b2:	557d                	li	a0,-1
@@ -709,7 +709,7 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 
 800001b6 <_lseek>:
 _lseek():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/lseek.c:11
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/lseek.c:11
 extern int errno;
 
 __WEAK int _lseek(int file, int offset, int whence)
@@ -721,7 +721,7 @@ __WEAK int _lseek(int file, int offset, int whence)
 
 800001ba <_read>:
 _read():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:12
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:12
 
 // #define UART_AUTO_ECHO
 
@@ -729,10 +729,10 @@ __WEAK ssize_t _read(int fd, void* ptr, size_t len)
 {
     if (fd != STDIN_FILENO) {
 800001ba:	c119                	beqz	a0,800001c0 <_read+0x6>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:13
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:13
         return -1;
 800001bc:	557d                	li	a0,-1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:22
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:22
     readbuf[0] = uart_read(SOC_DEBUG_UART);
 #ifdef UART_AUTO_ECHO
     uart_write(SOC_DEBUG_UART, readbuf[0]);
@@ -740,36 +740,36 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
     return 1;
 }
 800001be:	8082                	ret
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:11
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:11
 {
 800001c0:	1141                	addi	sp,sp,-16
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:17
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:17
     readbuf[0] = uart_read(SOC_DEBUG_UART);
 800001c2:	10013537          	lui	a0,0x10013
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:11
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:11
 {
 800001c6:	c422                	sw	s0,8(sp)
 800001c8:	c606                	sw	ra,12(sp)
 800001ca:	842e                	mv	s0,a1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:17
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:17
     readbuf[0] = uart_read(SOC_DEBUG_UART);
 800001cc:	2a71                	jal	80000368 <uart_read>
 800001ce:	00a40023          	sb	a0,0(s0)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:22
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:22
 }
 800001d2:	40b2                	lw	ra,12(sp)
 800001d4:	4422                	lw	s0,8(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:21
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:21
     return 1;
 800001d6:	4505                	li	a0,1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:22
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/read.c:22
 }
 800001d8:	0141                	addi	sp,sp,16
 800001da:	8082                	ret
 
 800001dc <_sbrk>:
 _sbrk():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/sbrk.c:13
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/sbrk.c:13
 {
     extern char _end[];
     extern char _heap_end[];
@@ -782,32 +782,32 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 800001e6:	96818693          	addi	a3,gp,-1688 # 900001c8 <_end>
 800001ea:	953e                	add	a0,a0,a5
 800001ec:	00d56b63          	bltu	a0,a3,80000202 <_sbrk+0x26>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/sbrk.c:13 (discriminator 1)
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/sbrk.c:13 (discriminator 1)
 800001f0:	1000f697          	auipc	a3,0x1000f
 800001f4:	61068693          	addi	a3,a3,1552 # 9000f800 <_heap_end>
 800001f8:	00a6e563          	bltu	a3,a0,80000202 <_sbrk+0x26>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/sbrk.c:17
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/sbrk.c:17
         return (void *)(-1);
     }
 
     curbrk += incr;
 800001fc:	c308                	sw	a0,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/sbrk.c:19
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/sbrk.c:19
     return (void *)(curbrk - incr);
 }
 800001fe:	853e                	mv	a0,a5
 80000200:	8082                	ret
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/sbrk.c:14
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/sbrk.c:14
         return (void *)(-1);
 80000202:	57fd                	li	a5,-1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/sbrk.c:19
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/sbrk.c:19
 }
 80000204:	853e                	mv	a0,a5
 80000206:	8082                	ret
 
 80000208 <_write>:
 _write():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:9
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:9
 #include <unistd.h>
 #include <sys/types.h>
 #include <hbird_sdk_hal.h>
@@ -822,62 +822,62 @@ __WEAK ssize_t _write(int fd, const void* ptr, size_t len)
 80000212:	c84a                	sw	s2,16(sp)
 80000214:	842e                	mv	s0,a1
 80000216:	89b2                	mv	s3,a2
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:10
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:10
     if (!isatty(fd)) {
 80000218:	45b000ef          	jal	ra,80000e72 <isatty>
 8000021c:	c529                	beqz	a0,80000266 <_write+0x5e>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:15
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:15
         return -1;
     }
 
     const uint8_t *writebuf = (const uint8_t *)ptr;
     for (size_t i = 0; i < len; i++) {
 8000021e:	01340933          	add	s2,s0,s3
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:16
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:16
         if (writebuf[i] == '\n') {
 80000222:	44a9                	li	s1,10
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:15
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:15
     for (size_t i = 0; i < len; i++) {
 80000224:	00099963          	bnez	s3,80000236 <_write+0x2e>
 80000228:	a03d                	j	80000256 <_write+0x4e>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:15 (discriminator 2)
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:15 (discriminator 2)
 8000022a:	0405                	addi	s0,s0,1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:19 (discriminator 2)
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:19 (discriminator 2)
             uart_write(SOC_DEBUG_UART, '\r');
         }
         uart_write(SOC_DEBUG_UART, writebuf[i]);
 8000022c:	10013537          	lui	a0,0x10013
 80000230:	2215                	jal	80000354 <uart_write>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:15 (discriminator 2)
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:15 (discriminator 2)
     for (size_t i = 0; i < len; i++) {
 80000232:	03240263          	beq	s0,s2,80000256 <_write+0x4e>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:16
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:16
         if (writebuf[i] == '\n') {
 80000236:	00044583          	lbu	a1,0(s0)
 8000023a:	fe9598e3          	bne	a1,s1,8000022a <_write+0x22>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:17
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:17
             uart_write(SOC_DEBUG_UART, '\r');
 8000023e:	45b5                	li	a1,13
 80000240:	10013537          	lui	a0,0x10013
 80000244:	2a01                	jal	80000354 <uart_write>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:19
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:19
         uart_write(SOC_DEBUG_UART, writebuf[i]);
 80000246:	00044583          	lbu	a1,0(s0)
 8000024a:	10013537          	lui	a0,0x10013
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:15
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:15
     for (size_t i = 0; i < len; i++) {
 8000024e:	0405                	addi	s0,s0,1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:19
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:19
         uart_write(SOC_DEBUG_UART, writebuf[i]);
 80000250:	2211                	jal	80000354 <uart_write>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:15
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:15
     for (size_t i = 0; i < len; i++) {
 80000252:	ff2412e3          	bne	s0,s2,80000236 <_write+0x2e>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:21
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:21
     }
     return len;
 80000256:	854e                	mv	a0,s3
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:22
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:22
 }
 80000258:	40f2                	lw	ra,28(sp)
 8000025a:	4462                	lw	s0,24(sp)
@@ -886,7 +886,7 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 80000260:	49b2                	lw	s3,12(sp)
 80000262:	6105                	addi	sp,sp,32
 80000264:	8082                	ret
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:11
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.c:11
         return -1;
 80000266:	557d                	li	a0,-1
 80000268:	bfc5                	j	80000258 <_write+0x50>
@@ -894,7 +894,7 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 
 8000026c <trap_entry>:
 trap_entry():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:159
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:159
 .align 2
 .global trap_entry
 .weak trap_entry
@@ -919,7 +919,7 @@ trap_entry:
 8000028a:	c2f6                	sw	t4,68(sp)
 8000028c:	c4fa                	sw	t5,72(sp)
 8000028e:	c6fe                	sw	t6,76(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:161
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:161
     /* Save the necessary CSR registers */
     SAVE_CSR_CONTEXT
 80000290:	341022f3          	csrr	t0,mepc
@@ -928,7 +928,7 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 8000029a:	d816                	sw	t0,48(sp)
 8000029c:	300022f3          	csrr	t0,mstatus
 800002a0:	da16                	sw	t0,52(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:168
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:168
     /*
      * Set the exception handler function arguments
      * argument 1: mcause value
@@ -936,10 +936,10 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
      */
     csrr a0, mcause
 800002a2:	34202573          	csrr	a0,mcause
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:169
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:169
     mv a1, sp
 800002a6:	858a                	mv	a1,sp
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:175
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:175
     /*
      * TODO: Call the trap handler function
      * By default, the function template is provided in
@@ -947,7 +947,7 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
      */
     call core_trap_handler
 800002a8:	22ed                	jal	80000492 <core_trap_handler>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:178
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:178
 
     /* Restore the necessary CSR registers */
     RESTORE_CSR_CONTEXT
@@ -957,7 +957,7 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 800002b2:	34229073          	csrw	mcause,t0
 800002b6:	52d2                	lw	t0,52(sp)
 800002b8:	30029073          	csrw	mstatus,t0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:180
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:180
     /* Restore the caller saving registers (context) */
     RESTORE_CONTEXT
 800002bc:	4082                	lw	ra,0(sp)
@@ -978,7 +978,7 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 800002da:	4f26                	lw	t5,72(sp)
 800002dc:	4fb6                	lw	t6,76(sp)
 800002de:	6161                	addi	sp,sp,80
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:183
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.S:183
 
     /* Return to regular code */
     mret
@@ -986,75 +986,75 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 
 800002e4 <gpio_iof_config>:
 gpio_iof_config():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:5
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:5
 #include "hbirdv2.h"
 #include "hbirdv2_gpio.h"
 
 int32_t gpio_iof_config(GPIO_TypeDef *gpio, uint32_t mask)
 {
 800002e4:	87aa                	mv	a5,a0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:6
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:6
     if (__RARELY(gpio == NULL)) {
 800002e6:	c511                	beqz	a0,800002f2 <gpio_iof_config+0xe>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:9
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:9
         return -1;
     }
     gpio->IOFCFG |= mask;
 800002e8:	4d58                	lw	a4,28(a0)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:11
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:11
 
     return 0;
 800002ea:	4501                	li	a0,0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:9
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:9
     gpio->IOFCFG |= mask;
 800002ec:	8dd9                	or	a1,a1,a4
 800002ee:	cfcc                	sw	a1,28(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:11
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:11
     return 0;
 800002f0:	8082                	ret
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:7
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:7
         return -1;
 800002f2:	557d                	li	a0,-1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:12
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:12
 }
 800002f4:	8082                	ret
 
 800002f6 <gpio_enable_output>:
 gpio_enable_output():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:16
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:16
 
 
 int32_t gpio_enable_output(GPIO_TypeDef *gpio, uint32_t mask)
 {
 800002f6:	87aa                	mv	a5,a0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:17
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:17
     if (__RARELY(gpio == NULL)) {
 800002f8:	c511                	beqz	a0,80000304 <gpio_enable_output+0xe>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:20
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:20
         return -1;
     }
     gpio->PADDIR |= mask;
 800002fa:	4118                	lw	a4,0(a0)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:21
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:21
     return 0;
 800002fc:	4501                	li	a0,0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:20
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:20
     gpio->PADDIR |= mask;
 800002fe:	8dd9                	or	a1,a1,a4
 80000300:	c38c                	sw	a1,0(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:21
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:21
     return 0;
 80000302:	8082                	ret
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:18
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:18
         return -1;
 80000304:	557d                	li	a0,-1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:22
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:22
 }
 80000306:	8082                	ret
 
 80000308 <gpio_toggle>:
 gpio_toggle():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:48
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:48
     }
     return 0;
 }
@@ -1062,44 +1062,44 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 int32_t gpio_toggle(GPIO_TypeDef *gpio, uint32_t mask)
 {
 80000308:	87aa                	mv	a5,a0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:49
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:49
     if (__RARELY(gpio == NULL)) {
 8000030a:	c511                	beqz	a0,80000316 <gpio_toggle+0xe>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:52
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:52
         return -1;
     }
     gpio->PADOUT = (mask ^ gpio->PADOUT);
 8000030c:	4518                	lw	a4,8(a0)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:53
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:53
     return 0;
 8000030e:	4501                	li	a0,0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:52
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:52
     gpio->PADOUT = (mask ^ gpio->PADOUT);
 80000310:	8db9                	xor	a1,a1,a4
 80000312:	c78c                	sw	a1,8(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:53
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:53
     return 0;
 80000314:	8082                	ret
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:50
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:50
         return -1;
 80000316:	557d                	li	a0,-1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:54
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:54
 }
 80000318:	8082                	ret
 
 8000031a <uart_init>:
 uart_init():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:5
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:5
 #include "hbirdv2.h"
 #include "hbirdv2_uart.h"
 
 int32_t uart_init(UART_TypeDef *uart, uint32_t baudrate)
 {
 8000031a:	87aa                	mv	a5,a0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:6
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:6
     if (__RARELY(uart == NULL)) {
 8000031c:	c915                	beqz	a0,80000350 <uart_init+0x36>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:10
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:10
         return -1;
     }
 
@@ -1107,11 +1107,11 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 8000031e:	10000717          	auipc	a4,0x10000
 80000322:	d4672703          	lw	a4,-698(a4) # 90000064 <SystemCoreClock>
 80000326:	02b755b3          	divu	a1,a4,a1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:11
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:11
     uart->LCR = 0x80;
 8000032a:	08000713          	li	a4,128
 8000032e:	c558                	sw	a4,12(a0)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:17
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:17
     uart->DLM = (uart_div >> 8) & 0xFF;
     uart->DLL = uart_div        & 0xFF;
     uart->FCR = 0xC6;
@@ -1119,39 +1119,39 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 
     return 0;
 80000330:	4501                	li	a0,0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:10
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:10
     unsigned int uart_div = SystemCoreClock / baudrate - 1;
 80000332:	15fd                	addi	a1,a1,-1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:12
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:12
     uart->DLM = (uart_div >> 8) & 0xFF;
 80000334:	0085d713          	srli	a4,a1,0x8
 80000338:	0ff77713          	zext.b	a4,a4
 8000033c:	c3d8                	sw	a4,4(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:13
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:13
     uart->DLL = uart_div        & 0xFF;
 8000033e:	0ff5f593          	zext.b	a1,a1
 80000342:	c38c                	sw	a1,0(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:14
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:14
     uart->FCR = 0xC6;
 80000344:	0c600713          	li	a4,198
 80000348:	c798                	sw	a4,8(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:15
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:15
     uart->LCR = 0x03;
 8000034a:	470d                	li	a4,3
 8000034c:	c7d8                	sw	a4,12(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:17
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:17
     return 0;
 8000034e:	8082                	ret
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:7
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:7
         return -1;
 80000350:	557d                	li	a0,-1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:18
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:18
 }
 80000352:	8082                	ret
 
 80000354 <uart_write>:
 uart_write():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:68
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:68
     return 0;
 }
 
@@ -1159,7 +1159,7 @@ int32_t uart_write(UART_TypeDef *uart, uint8_t val)
 {
     if (__RARELY(uart == NULL)) {
 80000354:	c901                	beqz	a0,80000364 <uart_write+0x10>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:73 (discriminator 1)
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:73 (discriminator 1)
         return -1;
     }
 #ifndef SIMULATION_SPIKE
@@ -1168,11 +1168,11 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 80000356:	495c                	lw	a5,20(a0)
 80000358:	0207f793          	andi	a5,a5,32
 8000035c:	dfed                	beqz	a5,80000356 <uart_write+0x2>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:75
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:75
 #endif
     uart->THR = val;
 8000035e:	c10c                	sw	a1,0(a0)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:80
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:80
 #else
     extern void htif_putc(char ch);
     htif_putc(val);
@@ -1180,23 +1180,23 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
     return 0;
 80000360:	4501                	li	a0,0
 80000362:	8082                	ret
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:69
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:69
         return -1;
 80000364:	557d                	li	a0,-1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:81
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:81
 }
 80000366:	8082                	ret
 
 80000368 <uart_read>:
 uart_read():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:86
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:86
 
 uint8_t uart_read(UART_TypeDef *uart)
 {
     uint32_t reg;
     if (__RARELY(uart == NULL)) {
 80000368:	c901                	beqz	a0,80000378 <uart_read+0x10>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:90 (discriminator 1)
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:90 (discriminator 1)
         return -1;
     }
     
@@ -1204,24 +1204,24 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 8000036a:	495c                	lw	a5,20(a0)
 8000036c:	8b85                	andi	a5,a5,1
 8000036e:	dff5                	beqz	a5,8000036a <uart_read+0x2>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:91
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:91
     reg = uart->RBR;
 80000370:	4108                	lw	a0,0(a0)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:93
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:93
     
     return (uint8_t)(reg & 0xFF);
 80000372:	0ff57513          	zext.b	a0,a0
 80000376:	8082                	ret
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:87
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:87
         return -1;
 80000378:	0ff00513          	li	a0,255
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:94
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_uart.c:94
 }
 8000037c:	8082                	ret
 
 8000037e <measure_cpu_freq>:
 SysTimer_GetLoadValue():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_timer.h:106
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_timer.h:106
  * - Load value is 64bits wide.
  * - \ref SysTimer_SetLoadValue
  */
@@ -1232,7 +1232,7 @@ __STATIC_FORCEINLINE uint64_t SysTimer_GetLoadValue(void)
 80000382:	ff87a703          	lw	a4,-8(a5) # 200bff8 <__stack_size+0x200b7f8>
 80000386:	ffc7a783          	lw	a5,-4(a5)
 measure_cpu_freq():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:9
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:9
 {
     return SOC_TIMER_FREQ;
 }
@@ -1243,7 +1243,7 @@ uint32_t measure_cpu_freq(uint32_t n)
 8000038c:	c606                	sw	ra,12(sp)
 8000038e:	c422                	sw	s0,8(sp)
 80000390:	c226                	sw	s1,4(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:15
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:15
     uint32_t start_mcycle, delta_mcycle;
     uint32_t start_mtime, delta_mtime;
     uint64_t mtime_freq = get_timer_freq();
@@ -1252,42 +1252,42 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
     uint32_t tmp = (uint32_t)SysTimer_GetLoadValue();
 80000392:	86ba                	mv	a3,a4
 SysTimer_GetLoadValue():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_timer.h:106
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_timer.h:106
 80000394:	0200c637          	lui	a2,0x200c
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_timer.h:106 (discriminator 1)
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_timer.h:106 (discriminator 1)
 80000398:	ff862703          	lw	a4,-8(a2) # 200bff8 <__stack_size+0x200b7f8>
 8000039c:	ffc62783          	lw	a5,-4(a2)
 measure_cpu_freq():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:18 (discriminator 1)
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:18 (discriminator 1)
     do {
         start_mtime = (uint32_t)SysTimer_GetLoadValue();
         start_mcycle = __RV_CSR_READ(CSR_MCYCLE);
 800003a0:	b00024f3          	csrr	s1,mcycle
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:19 (discriminator 1)
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:19 (discriminator 1)
     } while (start_mtime == tmp);
 800003a4:	fee68ae3          	beq	a3,a4,80000398 <measure_cpu_freq+0x1a>
 SysTimer_GetLoadValue():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_timer.h:106
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_timer.h:106
 800003a8:	0200c5b7          	lui	a1,0x200c
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_timer.h:106 (discriminator 1)
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_timer.h:106 (discriminator 1)
 800003ac:	ff85a603          	lw	a2,-8(a1) # 200bff8 <__stack_size+0x200b7f8>
 800003b0:	ffc5a683          	lw	a3,-4(a1)
 measure_cpu_freq():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:22 (discriminator 1)
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:22 (discriminator 1)
 
     do {
         delta_mtime = (uint32_t)SysTimer_GetLoadValue() - start_mtime;
 800003b4:	40e60433          	sub	s0,a2,a4
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:23 (discriminator 1)
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:23 (discriminator 1)
         delta_mcycle = __RV_CSR_READ(CSR_MCYCLE) - start_mcycle;
 800003b8:	b00027f3          	csrr	a5,mcycle
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:24 (discriminator 1)
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:24 (discriminator 1)
     } while (delta_mtime < n);
 800003bc:	fea468e3          	bltu	s0,a0,800003ac <measure_cpu_freq+0x2e>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:23
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:23
         delta_mcycle = __RV_CSR_READ(CSR_MCYCLE) - start_mcycle;
 800003c0:	409784b3          	sub	s1,a5,s1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:27
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:27
 
     return (delta_mcycle / delta_mtime) * mtime_freq
            + ((delta_mcycle % delta_mtime) * mtime_freq) / delta_mtime;
@@ -1297,62 +1297,62 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 800003cc:	00f59513          	slli	a0,a1,0xf
 800003d0:	81c5                	srli	a1,a1,0x11
 800003d2:	2995                	jal	80000846 <__udivdi3>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:26
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:26
     return (delta_mcycle / delta_mtime) * mtime_freq
 800003d4:	0284d633          	divu	a2,s1,s0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:28
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:28
 }
 800003d8:	40b2                	lw	ra,12(sp)
 800003da:	4422                	lw	s0,8(sp)
 800003dc:	4492                	lw	s1,4(sp)
 800003de:	0141                	addi	sp,sp,16
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:27
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:27
            + ((delta_mcycle % delta_mtime) * mtime_freq) / delta_mtime;
 800003e0:	063e                	slli	a2,a2,0xf
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:28
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:28
 }
 800003e2:	9532                	add	a0,a0,a2
 800003e4:	8082                	ret
 
 800003e6 <get_cpu_freq>:
 get_cpu_freq():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:31
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:31
 
 uint32_t get_cpu_freq(void)
 {
 800003e6:	1141                	addi	sp,sp,-16
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:35
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:35
     uint32_t cpu_freq;
 
     // warm up
     measure_cpu_freq(1);
 800003e8:	4505                	li	a0,1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:31
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:31
 {
 800003ea:	c606                	sw	ra,12(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:35
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:35
     measure_cpu_freq(1);
 800003ec:	3f49                	jal	8000037e <measure_cpu_freq>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:40
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:40
     // measure for real
     cpu_freq = measure_cpu_freq(100);
 
     return cpu_freq;
 }
 800003ee:	40b2                	lw	ra,12(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:37
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:37
     cpu_freq = measure_cpu_freq(100);
 800003f0:	06400513          	li	a0,100
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:40
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:40
 }
 800003f4:	0141                	addi	sp,sp,16
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:37
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/hbirdv2_common.c:37
     cpu_freq = measure_cpu_freq(100);
 800003f6:	b761                	j	8000037e <measure_cpu_freq>
 
 800003f8 <system_default_exception_handler>:
 system_default_exception_handler():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:168
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:168
  * \details
  * This function provided a default exception handling code for all exception ids.
  * By default, It will just print some information for debug, Vendor can customize it according to its requirements.
@@ -1362,42 +1362,42 @@ static void system_default_exception_handler(unsigned long mcause, unsigned long
 800003f8:	1141                	addi	sp,sp,-16
 800003fa:	c422                	sw	s0,8(sp)
 800003fc:	842a                	mv	s0,a0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:170
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:170
     /* TODO: Uncomment this if you have implement printf function */
     printf("Trap in Exception\r\n");
 800003fe:	00002517          	auipc	a0,0x2
 80000402:	d1a50513          	addi	a0,a0,-742 # 80002118 <_getpid_r+0x6>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:168
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:168
 {
 80000406:	c606                	sw	ra,12(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:170
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:170
     printf("Trap in Exception\r\n");
 80000408:	151000ef          	jal	ra,80000d58 <puts>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:171
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:171
     printf("MCAUSE: 0x%lx\r\n", mcause);
 8000040c:	85a2                	mv	a1,s0
 8000040e:	00002517          	auipc	a0,0x2
 80000412:	d1e50513          	addi	a0,a0,-738 # 8000212c <_getpid_r+0x1a>
 80000416:	02f000ef          	jal	ra,80000c44 <iprintf>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:172
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:172
     printf("MEPC  : 0x%lx\r\n", __RV_CSR_READ(CSR_MEPC));
 8000041a:	341025f3          	csrr	a1,mepc
 8000041e:	00002517          	auipc	a0,0x2
 80000422:	d1e50513          	addi	a0,a0,-738 # 8000213c <_getpid_r+0x2a>
 80000426:	01f000ef          	jal	ra,80000c44 <iprintf>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:173
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:173
     printf("MTVAL : 0x%lx\r\n", __RV_CSR_READ(CSR_MBADADDR));
 8000042a:	343025f3          	csrr	a1,mtval
 8000042e:	00002517          	auipc	a0,0x2
 80000432:	d1e50513          	addi	a0,a0,-738 # 8000214c <_getpid_r+0x3a>
 80000436:	00f000ef          	jal	ra,80000c44 <iprintf>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:174 (discriminator 1)
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:174 (discriminator 1)
     while(1);
 8000043a:	a001                	j	8000043a <system_default_exception_handler+0x42>
 
 8000043c <system_default_interrupt_handler>:
 system_default_interrupt_handler():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:183
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:183
  * \brief      System Default Interrupt Handler
  * \details
  * This function provided a default interrupt handling code for all interrupt ids.
@@ -1407,61 +1407,61 @@ static void system_default_interrupt_handler(unsigned long mcause, unsigned long
 8000043c:	1141                	addi	sp,sp,-16
 8000043e:	c422                	sw	s0,8(sp)
 80000440:	842a                	mv	s0,a0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:185
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:185
     /* TODO: Uncomment this if you have implement printf function */
     printf("Trap in Interrupt\r\n");
 80000442:	00002517          	auipc	a0,0x2
 80000446:	d1a50513          	addi	a0,a0,-742 # 8000215c <_getpid_r+0x4a>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:183
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:183
 {
 8000044a:	c606                	sw	ra,12(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:185
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:185
     printf("Trap in Interrupt\r\n");
 8000044c:	10d000ef          	jal	ra,80000d58 <puts>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:186
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:186
     printf("MCAUSE: 0x%lx\r\n", mcause);
 80000450:	85a2                	mv	a1,s0
 80000452:	00002517          	auipc	a0,0x2
 80000456:	cda50513          	addi	a0,a0,-806 # 8000212c <_getpid_r+0x1a>
 8000045a:	7ea000ef          	jal	ra,80000c44 <iprintf>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:187
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:187
     printf("MEPC  : 0x%lx\r\n", __RV_CSR_READ(CSR_MEPC));
 8000045e:	341025f3          	csrr	a1,mepc
 80000462:	00002517          	auipc	a0,0x2
 80000466:	cda50513          	addi	a0,a0,-806 # 8000213c <_getpid_r+0x2a>
 8000046a:	7da000ef          	jal	ra,80000c44 <iprintf>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:188
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:188
     printf("MTVAL : 0x%lx\r\n", __RV_CSR_READ(CSR_MBADADDR));
 8000046e:	343025f3          	csrr	a1,mtval
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:189
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:189
 }
 80000472:	4422                	lw	s0,8(sp)
 80000474:	40b2                	lw	ra,12(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:188
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:188
     printf("MTVAL : 0x%lx\r\n", __RV_CSR_READ(CSR_MBADADDR));
 80000476:	00002517          	auipc	a0,0x2
 8000047a:	cd650513          	addi	a0,a0,-810 # 8000214c <_getpid_r+0x3a>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:189
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:189
 }
 8000047e:	0141                	addi	sp,sp,16
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:188
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:188
     printf("MTVAL : 0x%lx\r\n", __RV_CSR_READ(CSR_MBADADDR));
 80000480:	7c40006f          	j	80000c44 <iprintf>
 
 80000484 <SystemInit>:
 SystemInit():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:125
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:125
     SystemCoreClock = SYSTEM_CLOCK;
 80000484:	04c4b7b7          	lui	a5,0x4c4b
 80000488:	40078793          	addi	a5,a5,1024 # 4c4b400 <__stack_size+0x4c4ac00>
 8000048c:	80f1a223          	sw	a5,-2044(gp) # 90000064 <SystemCoreClock>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:126
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:126
 }
 80000490:	8082                	ret
 
 80000492 <core_trap_handler>:
 core_trap_handler():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:322
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:322
  * - If you want to register core exception handler, please use \ref Exception_Register_EXC
  * - If you want to register core interrupt handler, please use \ref Interrupt_Register_CoreIRQ
  * - If you want to register external interrupt handler, please use \ref Interrupt_Register_ExtIRQ
@@ -1469,26 +1469,26 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 uint32_t core_trap_handler(unsigned long mcause, unsigned long sp)
 {
 80000492:	1141                	addi	sp,sp,-16
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:325
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:325
     if (mcause & MCAUSE_INTERRUPT) {
         INT_HANDLER int_handler = NULL;
         uint32_t irqn = (uint32_t)(mcause & 0X00000fff);
 80000494:	01451793          	slli	a5,a0,0x14
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:322
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:322
 {
 80000498:	c606                	sw	ra,12(sp)
 8000049a:	c422                	sw	s0,8(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:325
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:325
         uint32_t irqn = (uint32_t)(mcause & 0X00000fff);
 8000049c:	83d1                	srli	a5,a5,0x14
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:323
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:323
     if (mcause & MCAUSE_INTERRUPT) {
 8000049e:	02055163          	bgez	a0,800004c0 <core_trap_handler+0x2e>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:326
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:326
         if (irqn == IRQ_M_EXT) {
 800004a2:	472d                	li	a4,11
 800004a4:	04e78363          	beq	a5,a4,800004ea <core_trap_handler+0x58>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:338
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:338
                 }
                 PLIC_CompleteInterrupt(irqn);
             }
@@ -1499,11 +1499,11 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 800004aa:	82418713          	addi	a4,gp,-2012 # 90000084 <SystemCoreInterruptHandlers>
 800004ae:	97ba                	add	a5,a5,a4
 800004b0:	439c                	lw	a5,0(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:339
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:339
             if (int_handler != NULL) {
 800004b2:	c391                	beqz	a5,800004b6 <core_trap_handler+0x24>
 core_exception_handler():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:371
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:371
         exc_handler = (EXC_HANDLER)SystemExceptionHandlers[EXCn];
     } else {
         exc_handler = (EXC_HANDLER)system_default_exception_handler;
@@ -1512,7 +1512,7 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
         exc_handler(mcause, sp);
 800004b4:	9782                	jalr	a5
 core_trap_handler():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:347
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:347
 }
 800004b6:	40b2                	lw	ra,12(sp)
 800004b8:	4422                	lw	s0,8(sp)
@@ -1520,37 +1520,37 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 800004bc:	0141                	addi	sp,sp,16
 800004be:	8082                	ret
 core_exception_handler():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:365
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:365
     if ((EXCn < MAX_SYSTEM_EXCEPTION_NUM) && (EXCn >= 0)) {
 800004c0:	4629                	li	a2,10
 800004c2:	872a                	mv	a4,a0
 800004c4:	86ae                	mv	a3,a1
 800004c6:	00f66b63          	bltu	a2,a5,800004dc <core_trap_handler+0x4a>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:366
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:366
         exc_handler = (EXC_HANDLER)SystemExceptionHandlers[EXCn];
 800004ca:	078a                	slli	a5,a5,0x2
 800004cc:	84c18613          	addi	a2,gp,-1972 # 900000ac <SystemExceptionHandlers>
 800004d0:	97b2                	add	a5,a5,a2
 800004d2:	439c                	lw	a5,0(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:370
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:370
     if (exc_handler != NULL) {
 800004d4:	d3ed                	beqz	a5,800004b6 <core_trap_handler+0x24>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:371
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:371
         exc_handler(mcause, sp);
 800004d6:	85b6                	mv	a1,a3
 800004d8:	853a                	mv	a0,a4
 800004da:	bfe9                	j	800004b4 <core_trap_handler+0x22>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:368
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:368
         exc_handler = (EXC_HANDLER)system_default_exception_handler;
 800004dc:	00000797          	auipc	a5,0x0
 800004e0:	f1c78793          	addi	a5,a5,-228 # 800003f8 <system_default_exception_handler>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:371
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:371
         exc_handler(mcause, sp);
 800004e4:	85b6                	mv	a1,a3
 800004e6:	853a                	mv	a0,a4
 800004e8:	b7f1                	j	800004b4 <core_trap_handler+0x22>
 PLIC_ClaimInterrupt():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:273
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:273
  * \sa
  * - \ref PLIC_CompleteInterrupt
  */
@@ -1558,39 +1558,39 @@ __STATIC_FORCEINLINE uint32_t PLIC_ClaimInterrupt(void)
 {
     uint32_t hartid = __RV_CSR_READ(CSR_MHARTID);
 800004ea:	f14027f3          	csrr	a5,mhartid
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:274
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:274
     volatile uint32_t *claim_reg = (uint32_t *)((PLIC_BASE) + PLIC_CLAIM_OFFSET + \
 800004ee:	0c200737          	lui	a4,0xc200
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:275
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:275
                     + (hartid << PLIC_CLAIM_SHIFT_PER_TARGET));
 800004f2:	07b2                	slli	a5,a5,0xc
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:274
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:274
     volatile uint32_t *claim_reg = (uint32_t *)((PLIC_BASE) + PLIC_CLAIM_OFFSET + \
 800004f4:	0711                	addi	a4,a4,4
 800004f6:	97ba                	add	a5,a5,a4
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:277
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:277
 
     return (*claim_reg);
 800004f8:	4380                	lw	s0,0(a5)
 core_trap_handler():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:329
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:329
             if (irqn < __PLIC_INTNUM) {
 800004fa:	47c1                	li	a5,16
 800004fc:	fa87ede3          	bltu	a5,s0,800004b6 <core_trap_handler+0x24>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:330
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:330
                 int_handler = (INT_HANDLER)(SystemExtInterruptHandlers[irqn]);
 80000500:	00241713          	slli	a4,s0,0x2
 80000504:	87818793          	addi	a5,gp,-1928 # 900000d8 <SystemExtInterruptHandlers>
 80000508:	97ba                	add	a5,a5,a4
 8000050a:	439c                	lw	a5,0(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:331
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:331
                 if (int_handler != NULL) {
 8000050c:	c391                	beqz	a5,80000510 <core_trap_handler+0x7e>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:332
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:332
                     int_handler(mcause, sp);
 8000050e:	9782                	jalr	a5
 PLIC_CompleteInterrupt():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:298
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:298
  * \sa
  * - \ref PLIC_ClaimInterrupt
  */
@@ -1598,27 +1598,27 @@ __STATIC_FORCEINLINE void PLIC_CompleteInterrupt(uint32_t source)
 {
     uint32_t hartid = __RV_CSR_READ(CSR_MHARTID);
 80000510:	f14027f3          	csrr	a5,mhartid
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:299
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:299
     volatile uint32_t *complete_reg = (uint32_t *)((PLIC_BASE) + PLIC_CLAIM_OFFSET + \
 80000514:	0c200737          	lui	a4,0xc200
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:300
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:300
                     + (hartid << PLIC_CLAIM_SHIFT_PER_TARGET));
 80000518:	07b2                	slli	a5,a5,0xc
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:299
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:299
     volatile uint32_t *complete_reg = (uint32_t *)((PLIC_BASE) + PLIC_CLAIM_OFFSET + \
 8000051a:	0711                	addi	a4,a4,4
 8000051c:	97ba                	add	a5,a5,a4
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:302
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:302
 
     *complete_reg = source;
 8000051e:	c380                	sw	s0,0(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:303
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:303
 }
 80000520:	bf59                	j	800004b6 <core_trap_handler+0x24>
 
 80000522 <_premain_init>:
 _premain_init():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:464
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:464
  * For RISC-V gnu toolchain, _init function might not be called
  * by __libc_init_array function, so we defined a new function
  * to do initialization
@@ -1628,31 +1628,31 @@ void _premain_init(void)
 80000522:	1141                	addi	sp,sp,-16
 80000524:	c606                	sw	ra,12(sp)
 80000526:	c422                	sw	s0,8(sp)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:466
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:466
     /* TODO: Add your own initialization code here, called before main */
     SystemCoreClock = get_cpu_freq();
 80000528:	3d7d                	jal	800003e6 <get_cpu_freq>
 8000052a:	87aa                	mv	a5,a0
 8000052c:	80418413          	addi	s0,gp,-2044 # 90000064 <SystemCoreClock>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:468
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:468
 #if ! defined(SIMULATION_SPIKE) && ! defined(SIMULATION_XLSPIKE)
     gpio_iof_config(GPIOA, IOF_UART_MASK);
 80000530:	000305b7          	lui	a1,0x30
 80000534:	10012537          	lui	a0,0x10012
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:466
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:466
     SystemCoreClock = get_cpu_freq();
 80000538:	c01c                	sw	a5,0(s0)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:468
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:468
     gpio_iof_config(GPIOA, IOF_UART_MASK);
 8000053a:	336d                	jal	800002e4 <gpio_iof_config>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:469
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:469
     uart_init(SOC_DEBUG_UART, 115200);
 8000053c:	65f1                	lui	a1,0x1c
 8000053e:	20058593          	addi	a1,a1,512 # 1c200 <__stack_size+0x1ba00>
 80000542:	10013537          	lui	a0,0x10013
 80000546:	3bd1                	jal	8000031a <uart_init>
 SystemBannerPrint():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:381
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:381
     printf("HummingBird SDK Build Time: %s, %s\r\n", __DATE__, __TIME__);
 80000548:	00002617          	auipc	a2,0x2
 8000054c:	c2860613          	addi	a2,a2,-984 # 80002170 <_getpid_r+0x5e>
@@ -1661,55 +1661,55 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 80000558:	00002517          	auipc	a0,0x2
 8000055c:	c3050513          	addi	a0,a0,-976 # 80002188 <_getpid_r+0x76>
 80000560:	25d5                	jal	80000c44 <iprintf>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:383
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:383
     printf("Download Mode: %s\r\n", DOWNLOAD_MODE_STRING);
 80000562:	00002597          	auipc	a1,0x2
 80000566:	c4e58593          	addi	a1,a1,-946 # 800021b0 <_getpid_r+0x9e>
 8000056a:	00002517          	auipc	a0,0x2
 8000056e:	c4a50513          	addi	a0,a0,-950 # 800021b4 <_getpid_r+0xa2>
 80000572:	2dc9                	jal	80000c44 <iprintf>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:385
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:385
     printf("CPU Frequency %lu Hz\r\n", SystemCoreClock);
 80000574:	400c                	lw	a1,0(s0)
 80000576:	00002517          	auipc	a0,0x2
 8000057a:	c5250513          	addi	a0,a0,-942 # 800021c8 <_getpid_r+0xb6>
 8000057e:	25d9                	jal	80000c44 <iprintf>
 Exception_Init():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:201
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:201
         SystemExceptionHandlers[i] = (unsigned long)system_default_exception_handler;
 80000580:	00000697          	auipc	a3,0x0
 80000584:	e7868693          	addi	a3,a3,-392 # 800003f8 <system_default_exception_handler>
 80000588:	84c18793          	addi	a5,gp,-1972 # 900000ac <SystemExceptionHandlers>
 8000058c:	87818713          	addi	a4,gp,-1928 # 900000d8 <SystemExtInterruptHandlers>
 80000590:	c394                	sw	a3,0(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:200
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:200
     for (int i = 0; i < MAX_SYSTEM_EXCEPTION_NUM; i++) {
 80000592:	0791                	addi	a5,a5,4
 80000594:	fee79ee3          	bne	a5,a4,80000590 <_premain_init+0x6e>
 Interrupt_Init():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:216
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:216
         SystemExtInterruptHandlers[i] = (unsigned long)system_default_interrupt_handler;
 80000598:	00000717          	auipc	a4,0x0
 8000059c:	ea470713          	addi	a4,a4,-348 # 8000043c <system_default_interrupt_handler>
 800005a0:	87818793          	addi	a5,gp,-1928 # 900000d8 <SystemExtInterruptHandlers>
 800005a4:	8bc18693          	addi	a3,gp,-1860 # 9000011c <misa_chars.0>
 800005a8:	c398                	sw	a4,0(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:215
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:215
     for (i = 0; i < __PLIC_INTNUM; i++) {
 800005aa:	0791                	addi	a5,a5,4
 800005ac:	fef69ee3          	bne	a3,a5,800005a8 <_premain_init+0x86>
 800005b0:	82418793          	addi	a5,gp,-2012 # 90000084 <SystemCoreInterruptHandlers>
 800005b4:	84c18693          	addi	a3,gp,-1972 # 900000ac <SystemExceptionHandlers>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:219
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:219
         SystemCoreInterruptHandlers[i] = (unsigned long)system_default_interrupt_handler;
 800005b8:	c398                	sw	a4,0(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:218
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:218
     for (i = 0; i < 10; i++) {
 800005ba:	0791                	addi	a5,a5,4
 800005bc:	fed79ee3          	bne	a5,a3,800005b8 <_premain_init+0x96>
 800005c0:	0c000637          	lui	a2,0xc000
 PLIC_Init():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:318
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:318
  */
 __STATIC_FORCEINLINE void PLIC_Init(uint32_t num_sources)
 {
@@ -1718,54 +1718,54 @@ __STATIC_FORCEINLINE void PLIC_Init(uint32_t num_sources)
     for (i = 0; i < num_sources; i ++) {
 800005c4:	4681                	li	a3,0
 PLIC_DisableInterrupt():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:193
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:193
                     (hartid << PLIC_ENABLE_SHIFT_PER_TARGET) + (source >> 5) * 4);
 800005c6:	0c0028b7          	lui	a7,0xc002
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:196
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:196
     current = current & (~(1<<(source&0x1F)));
 800005ca:	4805                	li	a6,1
 PLIC_Init():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:318
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:318
     for (i = 0; i < num_sources; i ++) {
 800005cc:	4545                	li	a0,17
 PLIC_DisableInterrupt():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:191
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:191
     uint32_t hartid = __RV_CSR_READ(CSR_MHARTID);
 800005ce:	f14027f3          	csrr	a5,mhartid
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:193
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:193
                     (hartid << PLIC_ENABLE_SHIFT_PER_TARGET) + (source >> 5) * 4);
 800005d2:	079e                	slli	a5,a5,0x7
 800005d4:	97c6                	add	a5,a5,a7
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:195
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:195
     uint32_t current = *enable_reg;
 800005d6:	438c                	lw	a1,0(a5)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:196
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:196
     current = current & (~(1<<(source&0x1F)));
 800005d8:	00d81733          	sll	a4,a6,a3
 800005dc:	fff74713          	not	a4,a4
 800005e0:	8f6d                	and	a4,a4,a1
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:197
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:197
     *enable_reg = current;
 800005e2:	c398                	sw	a4,0(a5)
 PLIC_SetPriority():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:237
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:237
     *priority_reg = priority;
 800005e4:	00062023          	sw	zero,0(a2) # c000000 <__stack_size+0xbfff800>
 PLIC_Init():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:318
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:318
     for (i = 0; i < num_sources; i ++) {
 800005e8:	0685                	addi	a3,a3,1
 800005ea:	0611                	addi	a2,a2,4
 800005ec:	fea691e3          	bne	a3,a0,800005ce <_premain_init+0xac>
 PLIC_SetThreshold():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:135
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:135
     uint32_t hartid = __RV_CSR_READ(CSR_MHARTID);
 800005f0:	f14027f3          	csrr	a5,mhartid
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:137
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:137
                     PLIC_THRESHOLD_OFFSET + (hartid << PLIC_THRESHOLD_SHIFT_PER_TARGET));
 800005f4:	0c200737          	lui	a4,0xc200
 _premain_init():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:481
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:481
     Interrupt_Init();
 #if defined(__PLIC_PRESENT) && __PLIC_PRESENT == 1
     /* PLIC initilization */
@@ -1775,20 +1775,20 @@ C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/
 800005f8:	40b2                	lw	ra,12(sp)
 800005fa:	4422                	lw	s0,8(sp)
 PLIC_SetThreshold():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:137
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:137
 800005fc:	07b2                	slli	a5,a5,0xc
 800005fe:	97ba                	add	a5,a5,a4
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:139
+D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include/core_feature_plic.h:139
     *thresh_reg = thresh;
 80000600:	0007a023          	sw	zero,0(a5)
 _premain_init():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:481
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:481
 80000604:	0141                	addi	sp,sp,16
 80000606:	8082                	ret
 
 80000608 <_postmain_fini>:
 _postmain_fini():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:507
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:507
 #ifdef SIMULATION_RTL
 extern void rtlsim_exit(int status);
     rtlsim_exit(status);
@@ -1799,7 +1799,7 @@ extern void rtlsim_exit(int status);
 
 8000060a <_init>:
 _init():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:521
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/system_hbirdv2.c:521
  * Please use \ref _premain_init function now
  */
 void _init(void)
@@ -1814,328 +1814,328 @@ _fini():
 
 8000060e <print_misa>:
 print_misa():
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:9
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:9
     CSR_MISA_Type misa_bits = (CSR_MISA_Type) __RV_CSR_READ(CSR_MISA);
 8000060e:	301026f3          	csrr	a3,misa
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:12
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:12
     if (misa_bits.b.mxl == 1) {
 80000612:	c0000737          	lui	a4,0xc0000
 80000616:	00e6f7b3          	and	a5,a3,a4
 8000061a:	40000637          	lui	a2,0x40000
 8000061e:	1ec78c63          	beq	a5,a2,80000816 <print_misa+0x208>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:15
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:15
     } else if (misa_bits.b.mxl == 2) {
 80000622:	80000637          	lui	a2,0x80000
 80000626:	1cc78e63          	beq	a5,a2,80000802 <print_misa+0x1f4>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:18
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:18
     } else if (misa_bits.b.mxl == 3) {
 8000062a:	20e78063          	beq	a5,a4,8000082a <print_misa+0x21c>
 8000062e:	4701                	li	a4,0
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:11
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:11
     uint8_t index = 0;
 80000630:	4781                	li	a5,0
 80000632:	8bc18613          	addi	a2,gp,-1860 # 9000011c <misa_chars.0>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:23
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:23
     if (misa_bits.b.i) {
 80000636:	1006f593          	andi	a1,a3,256
 8000063a:	c991                	beqz	a1,8000064e <print_misa+0x40>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:24
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:24
         misa_chars[index++] = 'I';
 8000063c:	0785                	addi	a5,a5,1
 8000063e:	9732                	add	a4,a4,a2
 80000640:	0ff7f793          	zext.b	a5,a5
 80000644:	04900593          	li	a1,73
 80000648:	00b70023          	sb	a1,0(a4) # c0000000 <_sp+0x2fff0000>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:27
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:27
         misa_chars[index++] = 'M';
 8000064c:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:26
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:26
     if (misa_bits.b.m) {
 8000064e:	6585                	lui	a1,0x1
 80000650:	8df5                	and	a1,a1,a3
 80000652:	c991                	beqz	a1,80000666 <print_misa+0x58>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:27
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:27
         misa_chars[index++] = 'M';
 80000654:	0785                	addi	a5,a5,1
 80000656:	9732                	add	a4,a4,a2
 80000658:	0ff7f793          	zext.b	a5,a5
 8000065c:	04d00593          	li	a1,77
 80000660:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:30
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:30
         misa_chars[index++] = 'A';
 80000664:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:29
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:29
     if (misa_bits.b.a) {
 80000666:	0016f593          	andi	a1,a3,1
 8000066a:	c991                	beqz	a1,8000067e <print_misa+0x70>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:30
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:30
         misa_chars[index++] = 'A';
 8000066c:	0785                	addi	a5,a5,1
 8000066e:	9732                	add	a4,a4,a2
 80000670:	0ff7f793          	zext.b	a5,a5
 80000674:	04100593          	li	a1,65
 80000678:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:33
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:33
         misa_chars[index++] = 'B';
 8000067c:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:32
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:32
     if (misa_bits.b.b) {
 8000067e:	0026f593          	andi	a1,a3,2
 80000682:	c991                	beqz	a1,80000696 <print_misa+0x88>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:33
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:33
         misa_chars[index++] = 'B';
 80000684:	0785                	addi	a5,a5,1
 80000686:	9732                	add	a4,a4,a2
 80000688:	0ff7f793          	zext.b	a5,a5
 8000068c:	04200593          	li	a1,66
 80000690:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:36
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:36
         misa_chars[index++] = 'C';
 80000694:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:35
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:35
     if (misa_bits.b.c) {
 80000696:	0046f593          	andi	a1,a3,4
 8000069a:	c991                	beqz	a1,800006ae <print_misa+0xa0>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:36
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:36
         misa_chars[index++] = 'C';
 8000069c:	0785                	addi	a5,a5,1
 8000069e:	9732                	add	a4,a4,a2
 800006a0:	0ff7f793          	zext.b	a5,a5
 800006a4:	04300593          	li	a1,67
 800006a8:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:39
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:39
         misa_chars[index++] = 'E';
 800006ac:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:38
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:38
     if (misa_bits.b.e) {
 800006ae:	0106f593          	andi	a1,a3,16
 800006b2:	c991                	beqz	a1,800006c6 <print_misa+0xb8>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:39
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:39
         misa_chars[index++] = 'E';
 800006b4:	0785                	addi	a5,a5,1
 800006b6:	9732                	add	a4,a4,a2
 800006b8:	0ff7f793          	zext.b	a5,a5
 800006bc:	04500593          	li	a1,69
 800006c0:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:42
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:42
         misa_chars[index++] = 'F';
 800006c4:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:41
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:41
     if (misa_bits.b.f) {
 800006c6:	0206f593          	andi	a1,a3,32
 800006ca:	c991                	beqz	a1,800006de <print_misa+0xd0>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:42
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:42
         misa_chars[index++] = 'F';
 800006cc:	0785                	addi	a5,a5,1
 800006ce:	9732                	add	a4,a4,a2
 800006d0:	0ff7f793          	zext.b	a5,a5
 800006d4:	04600593          	li	a1,70
 800006d8:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:45
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:45
         misa_chars[index++] = 'D';
 800006dc:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:44
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:44
     if (misa_bits.b.d) {
 800006de:	0086f593          	andi	a1,a3,8
 800006e2:	c991                	beqz	a1,800006f6 <print_misa+0xe8>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:45
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:45
         misa_chars[index++] = 'D';
 800006e4:	0785                	addi	a5,a5,1
 800006e6:	9732                	add	a4,a4,a2
 800006e8:	0ff7f793          	zext.b	a5,a5
 800006ec:	04400593          	li	a1,68
 800006f0:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:48
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:48
         misa_chars[index++] = 'Q';
 800006f4:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:47
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:47
     if (misa_bits.b.q) {
 800006f6:	65c1                	lui	a1,0x10
 800006f8:	8df5                	and	a1,a1,a3
 800006fa:	c991                	beqz	a1,8000070e <print_misa+0x100>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:48
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:48
         misa_chars[index++] = 'Q';
 800006fc:	0785                	addi	a5,a5,1
 800006fe:	9732                	add	a4,a4,a2
 80000700:	0ff7f793          	zext.b	a5,a5
 80000704:	05100593          	li	a1,81
 80000708:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:51
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:51
         misa_chars[index++] = 'H';
 8000070c:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:50
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:50
     if (misa_bits.b.h) {
 8000070e:	0806f593          	andi	a1,a3,128
 80000712:	c991                	beqz	a1,80000726 <print_misa+0x118>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:51
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:51
         misa_chars[index++] = 'H';
 80000714:	0785                	addi	a5,a5,1
 80000716:	9732                	add	a4,a4,a2
 80000718:	0ff7f793          	zext.b	a5,a5
 8000071c:	04800593          	li	a1,72
 80000720:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:54
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:54
         misa_chars[index++] = 'J';
 80000724:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:53
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:53
     if (misa_bits.b.j) {
 80000726:	2006f593          	andi	a1,a3,512
 8000072a:	c991                	beqz	a1,8000073e <print_misa+0x130>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:54
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:54
         misa_chars[index++] = 'J';
 8000072c:	0785                	addi	a5,a5,1
 8000072e:	9732                	add	a4,a4,a2
 80000730:	0ff7f793          	zext.b	a5,a5
 80000734:	04a00593          	li	a1,74
 80000738:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:57
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:57
         misa_chars[index++] = 'L';
 8000073c:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:56
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:56
     if (misa_bits.b.l) {
 8000073e:	00b6d593          	srli	a1,a3,0xb
 80000742:	8985                	andi	a1,a1,1
 80000744:	c991                	beqz	a1,80000758 <print_misa+0x14a>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:57
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:57
         misa_chars[index++] = 'L';
 80000746:	0785                	addi	a5,a5,1
 80000748:	9732                	add	a4,a4,a2
 8000074a:	0ff7f793          	zext.b	a5,a5
 8000074e:	04c00593          	li	a1,76
 80000752:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:60
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:60
         misa_chars[index++] = 'N';
 80000756:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:59
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:59
     if (misa_bits.b.n) {
 80000758:	6589                	lui	a1,0x2
 8000075a:	8df5                	and	a1,a1,a3
 8000075c:	c991                	beqz	a1,80000770 <print_misa+0x162>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:60
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:60
         misa_chars[index++] = 'N';
 8000075e:	0785                	addi	a5,a5,1
 80000760:	9732                	add	a4,a4,a2
 80000762:	0ff7f793          	zext.b	a5,a5
 80000766:	04e00593          	li	a1,78
 8000076a:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:63
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:63
         misa_chars[index++] = 'S';
 8000076e:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:62
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:62
     if (misa_bits.b.s) {
 80000770:	000405b7          	lui	a1,0x40
 80000774:	8df5                	and	a1,a1,a3
 80000776:	c991                	beqz	a1,8000078a <print_misa+0x17c>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:63
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:63
         misa_chars[index++] = 'S';
 80000778:	0785                	addi	a5,a5,1
 8000077a:	9732                	add	a4,a4,a2
 8000077c:	0ff7f793          	zext.b	a5,a5
 80000780:	05300593          	li	a1,83
 80000784:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:66
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:66
         misa_chars[index++] = 'P';
 80000788:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:65
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:65
     if (misa_bits.b.p) {
 8000078a:	65a1                	lui	a1,0x8
 8000078c:	8df5                	and	a1,a1,a3
 8000078e:	c991                	beqz	a1,800007a2 <print_misa+0x194>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:66
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:66
         misa_chars[index++] = 'P';
 80000790:	0785                	addi	a5,a5,1
 80000792:	9732                	add	a4,a4,a2
 80000794:	0ff7f793          	zext.b	a5,a5
 80000798:	05000593          	li	a1,80
 8000079c:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:69
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:69
         misa_chars[index++] = 'T';
 800007a0:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:68
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:68
     if (misa_bits.b.t) {
 800007a2:	000805b7          	lui	a1,0x80
 800007a6:	8df5                	and	a1,a1,a3
 800007a8:	c991                	beqz	a1,800007bc <print_misa+0x1ae>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:69
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:69
         misa_chars[index++] = 'T';
 800007aa:	0785                	addi	a5,a5,1
 800007ac:	9732                	add	a4,a4,a2
 800007ae:	0ff7f793          	zext.b	a5,a5
 800007b2:	05400593          	li	a1,84
 800007b6:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:72
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:72
         misa_chars[index++] = 'U';
 800007ba:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:71
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:71
     if (misa_bits.b.u) {
 800007bc:	001005b7          	lui	a1,0x100
 800007c0:	8df5                	and	a1,a1,a3
 800007c2:	c991                	beqz	a1,800007d6 <print_misa+0x1c8>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:72
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:72
         misa_chars[index++] = 'U';
 800007c4:	0785                	addi	a5,a5,1
 800007c6:	9732                	add	a4,a4,a2
 800007c8:	0ff7f793          	zext.b	a5,a5
 800007cc:	05500593          	li	a1,85
 800007d0:	00b70023          	sb	a1,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:75
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:75
         misa_chars[index++] = 'X';
 800007d4:	873e                	mv	a4,a5
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:74
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:74
     if (misa_bits.b.x) {
 800007d6:	008005b7          	lui	a1,0x800
 800007da:	8eed                	and	a3,a3,a1
 800007dc:	ca89                	beqz	a3,800007ee <print_misa+0x1e0>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:75
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:75
         misa_chars[index++] = 'X';
 800007de:	9732                	add	a4,a4,a2
 800007e0:	0785                	addi	a5,a5,1
 800007e2:	05800693          	li	a3,88
 800007e6:	00d70023          	sb	a3,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:78
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:78
     misa_chars[index++] = '\0';
 800007ea:	0ff7f713          	zext.b	a4,a5
 800007ee:	9732                	add	a4,a4,a2
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:80
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:80
     printf("MISA: RV%s\r\n", misa_chars);
 800007f0:	8bc18593          	addi	a1,gp,-1860 # 9000011c <misa_chars.0>
 800007f4:	00002517          	auipc	a0,0x2
 800007f8:	9ec50513          	addi	a0,a0,-1556 # 800021e0 <_getpid_r+0xce>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:78
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:78
     misa_chars[index++] = '\0';
 800007fc:	00070023          	sb	zero,0(a4)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:80
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:80
     printf("MISA: RV%s\r\n", misa_chars);
 80000800:	a191                	j	80000c44 <iprintf>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:16
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:16
         misa_chars[index++] = '6';
 80000802:	678d                	lui	a5,0x3
 80000804:	43678793          	addi	a5,a5,1078 # 3436 <__stack_size+0x2c36>
 80000808:	8bc18613          	addi	a2,gp,-1860 # 9000011c <misa_chars.0>
 8000080c:	00f61023          	sh	a5,0(a2) # 80000000 <_sp+0xefff0000>
 80000810:	4709                	li	a4,2
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:17
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:17
         misa_chars[index++] = '4';
 80000812:	4789                	li	a5,2
 80000814:	b50d                	j	80000636 <print_misa+0x28>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:13
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:13
         misa_chars[index++] = '3';
 80000816:	678d                	lui	a5,0x3
 80000818:	23378793          	addi	a5,a5,563 # 3233 <__stack_size+0x2a33>
 8000081c:	8bc18613          	addi	a2,gp,-1860 # 9000011c <misa_chars.0>
 80000820:	00f61023          	sh	a5,0(a2)
 80000824:	4709                	li	a4,2
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:14
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:14
         misa_chars[index++] = '2';
 80000826:	4789                	li	a5,2
 80000828:	b539                	j	80000636 <print_misa+0x28>
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:19
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:19
         misa_chars[index++] = '1';
 8000082a:	678d                	lui	a5,0x3
 8000082c:	8bc18613          	addi	a2,gp,-1860 # 9000011c <misa_chars.0>
 80000830:	23178793          	addi	a5,a5,561 # 3231 <__stack_size+0x2a31>
 80000834:	00f61023          	sh	a5,0(a2)
-C:\Users\Anuo\NucleiStudio_workspace\hello_world\Debug/../application/main.c:21
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:21
         misa_chars[index++] = '8';
 80000838:	03800793          	li	a5,56
 8000083c:	00f60123          	sb	a5,2(a2)
@@ -2159,7 +2159,7 @@ __udivmoddi4():
 80000850:	20069663          	bnez	a3,80000a5c <__udivdi3+0x216>
 /home/xl_ci/toolchain/riscv-gnu-toolchain/riscv-gcc/libgcc/libgcc2.c:1066
 80000854:	00002697          	auipc	a3,0x2
-80000858:	9ec68693          	addi	a3,a3,-1556 # 80002240 <__clz_tab>
+80000858:	9e868693          	addi	a3,a3,-1560 # 8000223c <__clz_tab>
 8000085c:	0ac5ff63          	bgeu	a1,a2,8000091a <__udivdi3+0xd4>
 /home/xl_ci/toolchain/riscv-gnu-toolchain/riscv-gcc/libgcc/libgcc2.c:1070
 80000860:	6741                	lui	a4,0x10
@@ -2356,7 +2356,7 @@ __udivmoddi4():
 80000a6e:	058e                	slli	a1,a1,0x3
 80000a70:	00b6d533          	srl	a0,a3,a1
 80000a74:	00001717          	auipc	a4,0x1
-80000a78:	7cc70713          	addi	a4,a4,1996 # 80002240 <__clz_tab>
+80000a78:	7c870713          	addi	a4,a4,1992 # 8000223c <__clz_tab>
 80000a7c:	972a                	add	a4,a4,a0
 80000a7e:	00074703          	lbu	a4,0(a4)
 80000a82:	02000513          	li	a0,32
@@ -2493,9 +2493,9 @@ __libc_fini_array():
 80000bb2:	c422                	sw	s0,8(sp)
 80000bb4:	c226                	sw	s1,4(sp)
 80000bb6:	00002417          	auipc	s0,0x2
-80000bba:	92a40413          	addi	s0,s0,-1750 # 800024e0 <__fsymtab_end>
+80000bba:	92640413          	addi	s0,s0,-1754 # 800024dc <__fsymtab_end>
 80000bbe:	00002497          	auipc	s1,0x2
-80000bc2:	92248493          	addi	s1,s1,-1758 # 800024e0 <__fsymtab_end>
+80000bc2:	91e48493          	addi	s1,s1,-1762 # 800024dc <__fsymtab_end>
 80000bc6:	8c05                	sub	s0,s0,s1
 80000bc8:	c606                	sw	ra,12(sp)
 80000bca:	8409                	srai	s0,s0,0x2
@@ -2518,9 +2518,9 @@ __libc_init_array():
 80000be8:	c422                	sw	s0,8(sp)
 80000bea:	c226                	sw	s1,4(sp)
 80000bec:	00002417          	auipc	s0,0x2
-80000bf0:	8f440413          	addi	s0,s0,-1804 # 800024e0 <__fsymtab_end>
+80000bf0:	8f040413          	addi	s0,s0,-1808 # 800024dc <__fsymtab_end>
 80000bf4:	00002497          	auipc	s1,0x2
-80000bf8:	8ec48493          	addi	s1,s1,-1812 # 800024e0 <__fsymtab_end>
+80000bf8:	8e848493          	addi	s1,s1,-1816 # 800024dc <__fsymtab_end>
 80000bfc:	8c81                	sub	s1,s1,s0
 80000bfe:	c04a                	sw	s2,0(sp)
 80000c00:	c606                	sw	ra,12(sp)
@@ -2528,9 +2528,9 @@ __libc_init_array():
 80000c04:	4901                	li	s2,0
 80000c06:	02991563          	bne	s2,s1,80000c30 <__libc_init_array+0x4a>
 80000c0a:	00002417          	auipc	s0,0x2
-80000c0e:	8d640413          	addi	s0,s0,-1834 # 800024e0 <__fsymtab_end>
+80000c0e:	8d240413          	addi	s0,s0,-1838 # 800024dc <__fsymtab_end>
 80000c12:	00002497          	auipc	s1,0x2
-80000c16:	8ce48493          	addi	s1,s1,-1842 # 800024e0 <__fsymtab_end>
+80000c16:	8ca48493          	addi	s1,s1,-1846 # 800024dc <__fsymtab_end>
 80000c1a:	8c81                	sub	s1,s1,s0
 80000c1c:	8489                	srai	s1,s1,0x2
 80000c1e:	4901                	li	s2,0
@@ -2603,7 +2603,7 @@ _puts_r():
 80000c9e:	8526                	mv	a0,s1
 80000ca0:	2565                	jal	80001348 <__sinit>
 80000ca2:	00001797          	auipc	a5,0x1
-80000ca6:	76a78793          	addi	a5,a5,1898 # 8000240c <__sf_fake_stdin>
+80000ca6:	76678793          	addi	a5,a5,1894 # 80002408 <__sf_fake_stdin>
 80000caa:	02f41c63          	bne	s0,a5,80000ce2 <_puts_r+0x64>
 80000cae:	40c0                	lw	s0,4(s1)
 80000cb0:	00c45783          	lhu	a5,12(s0)
@@ -2628,12 +2628,12 @@ _puts_r():
 80000cde:	4529                	li	a0,10
 80000ce0:	a035                	j	80000d0c <_puts_r+0x8e>
 80000ce2:	00001797          	auipc	a5,0x1
-80000ce6:	74a78793          	addi	a5,a5,1866 # 8000242c <__sf_fake_stdout>
+80000ce6:	74678793          	addi	a5,a5,1862 # 80002428 <__sf_fake_stdout>
 80000cea:	00f41463          	bne	s0,a5,80000cf2 <_puts_r+0x74>
 80000cee:	4480                	lw	s0,8(s1)
 80000cf0:	b7c1                	j	80000cb0 <_puts_r+0x32>
 80000cf2:	00001797          	auipc	a5,0x1
-80000cf6:	6fa78793          	addi	a5,a5,1786 # 800023ec <__sf_fake_stderr>
+80000cf6:	6f678793          	addi	a5,a5,1782 # 800023e8 <__sf_fake_stderr>
 80000cfa:	faf41be3          	bne	s0,a5,80000cb0 <_puts_r+0x32>
 80000cfe:	44c0                	lw	s0,12(s1)
 80000d00:	bf45                	j	80000cb0 <_puts_r+0x32>
@@ -2694,11 +2694,11 @@ srand():
 80000d78:	dc88                	sw	a0,56(s1)
 80000d7a:	ed09                	bnez	a0,80000d94 <srand+0x34>
 80000d7c:	00001697          	auipc	a3,0x1
-80000d80:	5c468693          	addi	a3,a3,1476 # 80002340 <__clz_tab+0x100>
+80000d80:	5c068693          	addi	a3,a3,1472 # 8000233c <__clz_tab+0x100>
 80000d84:	4601                	li	a2,0
 80000d86:	04200593          	li	a1,66
 80000d8a:	00001517          	auipc	a0,0x1
-80000d8e:	5ce50513          	addi	a0,a0,1486 # 80002358 <__clz_tab+0x118>
+80000d8e:	5ca50513          	addi	a0,a0,1482 # 80002354 <__clz_tab+0x118>
 80000d92:	2e39                	jal	800010b0 <__assert_func>
 80000d94:	abcd37b7          	lui	a5,0xabcd3
 80000d98:	30e78793          	addi	a5,a5,782 # abcd330e <_sp+0x1bcc330e>
@@ -2737,11 +2737,11 @@ rand():
 80000de6:	dc08                	sw	a0,56(s0)
 80000de8:	ed09                	bnez	a0,80000e02 <rand+0x30>
 80000dea:	00001697          	auipc	a3,0x1
-80000dee:	55668693          	addi	a3,a3,1366 # 80002340 <__clz_tab+0x100>
+80000dee:	55268693          	addi	a3,a3,1362 # 8000233c <__clz_tab+0x100>
 80000df2:	4601                	li	a2,0
 80000df4:	04e00593          	li	a1,78
 80000df8:	00001517          	auipc	a0,0x1
-80000dfc:	56050513          	addi	a0,a0,1376 # 80002358 <__clz_tab+0x118>
+80000dfc:	55c50513          	addi	a0,a0,1372 # 80002354 <__clz_tab+0x118>
 80000e00:	2c45                	jal	800010b0 <__assert_func>
 80000e02:	abcd37b7          	lui	a5,0xabcd3
 80000e06:	30e78793          	addi	a5,a5,782 # abcd330e <_sp+0x1bcc330e>
@@ -2803,7 +2803,7 @@ __swbuf_r():
 80000e8c:	e391                	bnez	a5,80000e90 <__swbuf_r+0x1a>
 80000e8e:	296d                	jal	80001348 <__sinit>
 80000e90:	00001797          	auipc	a5,0x1
-80000e94:	57c78793          	addi	a5,a5,1404 # 8000240c <__sf_fake_stdin>
+80000e94:	57878793          	addi	a5,a5,1400 # 80002408 <__sf_fake_stdin>
 80000e98:	06f41963          	bne	s0,a5,80000f0a <__swbuf_r+0x94>
 80000e9c:	40c0                	lw	s0,4(s1)
 80000e9e:	4c1c                	lw	a5,24(s0)
@@ -2852,12 +2852,12 @@ __swbuf_r():
 80000f06:	6105                	addi	sp,sp,32
 80000f08:	8082                	ret
 80000f0a:	00001797          	auipc	a5,0x1
-80000f0e:	52278793          	addi	a5,a5,1314 # 8000242c <__sf_fake_stdout>
+80000f0e:	51e78793          	addi	a5,a5,1310 # 80002428 <__sf_fake_stdout>
 80000f12:	00f41463          	bne	s0,a5,80000f1a <__swbuf_r+0xa4>
 80000f16:	4480                	lw	s0,8(s1)
 80000f18:	b759                	j	80000e9e <__swbuf_r+0x28>
 80000f1a:	00001797          	auipc	a5,0x1
-80000f1e:	4d278793          	addi	a5,a5,1234 # 800023ec <__sf_fake_stderr>
+80000f1e:	4ce78793          	addi	a5,a5,1230 # 800023e8 <__sf_fake_stderr>
 80000f22:	f6f41ee3          	bne	s0,a5,80000e9e <__swbuf_r+0x28>
 80000f26:	44c0                	lw	s0,12(s1)
 80000f28:	bf9d                	j	80000e9e <__swbuf_r+0x28>
@@ -2884,7 +2884,7 @@ __swsetup_r():
 80000f4e:	8526                	mv	a0,s1
 80000f50:	2ee5                	jal	80001348 <__sinit>
 80000f52:	00001797          	auipc	a5,0x1
-80000f56:	4ba78793          	addi	a5,a5,1210 # 8000240c <__sf_fake_stdin>
+80000f56:	4b678793          	addi	a5,a5,1206 # 80002408 <__sf_fake_stdin>
 80000f5a:	02f41763          	bne	s0,a5,80000f88 <__swsetup_r+0x52>
 80000f5e:	40c0                	lw	s0,4(s1)
 80000f60:	00c41783          	lh	a5,12(s0)
@@ -2901,12 +2901,12 @@ __swsetup_r():
 80000f84:	557d                	li	a0,-1
 80000f86:	a871                	j	80001022 <__swsetup_r+0xec>
 80000f88:	00001797          	auipc	a5,0x1
-80000f8c:	4a478793          	addi	a5,a5,1188 # 8000242c <__sf_fake_stdout>
+80000f8c:	4a078793          	addi	a5,a5,1184 # 80002428 <__sf_fake_stdout>
 80000f90:	00f41463          	bne	s0,a5,80000f98 <__swsetup_r+0x62>
 80000f94:	4480                	lw	s0,8(s1)
 80000f96:	b7e9                	j	80000f60 <__swsetup_r+0x2a>
 80000f98:	00001797          	auipc	a5,0x1
-80000f9c:	45478793          	addi	a5,a5,1108 # 800023ec <__sf_fake_stderr>
+80000f9c:	45078793          	addi	a5,a5,1104 # 800023e8 <__sf_fake_stderr>
 80000fa0:	fcf410e3          	bne	s0,a5,80000f60 <__swsetup_r+0x2a>
 80000fa4:	44c0                	lw	s0,12(s1)
 80000fa6:	bf6d                	j	80000f60 <__swsetup_r+0x2a>
@@ -3018,14 +3018,14 @@ __assert_func():
 800010be:	47c8                	lw	a0,12(a5)
 800010c0:	8636                	mv	a2,a3
 800010c2:	00001797          	auipc	a5,0x1
-800010c6:	2ea78793          	addi	a5,a5,746 # 800023ac <__clz_tab+0x16c>
+800010c6:	2e678793          	addi	a5,a5,742 # 800023a8 <__clz_tab+0x16c>
 800010ca:	00081763          	bnez	a6,800010d8 <__assert_func+0x28>
 800010ce:	00001797          	auipc	a5,0x1
-800010d2:	16e78793          	addi	a5,a5,366 # 8000223c <_getpid_r+0x12a>
+800010d2:	16a78793          	addi	a5,a5,362 # 80002238 <_getpid_r+0x126>
 800010d6:	883e                	mv	a6,a5
 800010d8:	86c6                	mv	a3,a7
 800010da:	00001597          	auipc	a1,0x1
-800010de:	2e258593          	addi	a1,a1,738 # 800023bc <__clz_tab+0x17c>
+800010de:	2de58593          	addi	a1,a1,734 # 800023b8 <__clz_tab+0x17c>
 800010e2:	2695                	jal	80001446 <fiprintf>
 800010e4:	69d000ef          	jal	ra,80001f80 <abort>
 
@@ -3172,7 +3172,7 @@ _fflush_r():
 80001242:	2219                	jal	80001348 <__sinit>
 80001244:	45b2                	lw	a1,12(sp)
 80001246:	00001797          	auipc	a5,0x1
-8000124a:	1c678793          	addi	a5,a5,454 # 8000240c <__sf_fake_stdin>
+8000124a:	1c278793          	addi	a5,a5,450 # 80002408 <__sf_fake_stdin>
 8000124e:	00f59b63          	bne	a1,a5,80001264 <_fflush_r+0x36>
 80001252:	404c                	lw	a1,4(s0)
 80001254:	00c59783          	lh	a5,12(a1)
@@ -3183,12 +3183,12 @@ _fflush_r():
 80001260:	6105                	addi	sp,sp,32
 80001262:	b559                	j	800010e8 <__sflush_r>
 80001264:	00001797          	auipc	a5,0x1
-80001268:	1c878793          	addi	a5,a5,456 # 8000242c <__sf_fake_stdout>
+80001268:	1c478793          	addi	a5,a5,452 # 80002428 <__sf_fake_stdout>
 8000126c:	00f59463          	bne	a1,a5,80001274 <_fflush_r+0x46>
 80001270:	440c                	lw	a1,8(s0)
 80001272:	b7cd                	j	80001254 <_fflush_r+0x26>
 80001274:	00001797          	auipc	a5,0x1
-80001278:	17878793          	addi	a5,a5,376 # 800023ec <__sf_fake_stderr>
+80001278:	17478793          	addi	a5,a5,372 # 800023e8 <__sf_fake_stderr>
 8000127c:	fcf59ce3          	bne	a1,a5,80001254 <_fflush_r+0x26>
 80001280:	444c                	lw	a1,12(s0)
 80001282:	bfc9                	j	80001254 <_fflush_r+0x26>
@@ -3840,7 +3840,7 @@ _vfiprintf_r():
 80001886:	e391                	bnez	a5,8000188a <_vfiprintf_r+0x28>
 80001888:	34c1                	jal	80001348 <__sinit>
 8000188a:	00001797          	auipc	a5,0x1
-8000188e:	b8278793          	addi	a5,a5,-1150 # 8000240c <__sf_fake_stdin>
+8000188e:	b7e78793          	addi	a5,a5,-1154 # 80002408 <__sf_fake_stdin>
 80001892:	0cf49b63          	bne	s1,a5,80001968 <_vfiprintf_r+0x106>
 80001896:	0049a483          	lw	s1,4(s3)
 8000189a:	00c4d783          	lhu	a5,12(s1)
@@ -3856,7 +3856,7 @@ _vfiprintf_r():
 800018b8:	c622                	sw	s0,12(sp)
 800018ba:	02500b93          	li	s7,37
 800018be:	00001a97          	auipc	s5,0x1
-800018c2:	b8ea8a93          	addi	s5,s5,-1138 # 8000244c <__sf_fake_stdout+0x20>
+800018c2:	b8aa8a93          	addi	s5,s5,-1142 # 80002448 <__sf_fake_stdout+0x20>
 800018c6:	4c05                	li	s8,1
 800018c8:	4b29                	li	s6,10
 800018ca:	844a                	mv	s0,s2
@@ -3915,12 +3915,12 @@ _vfiprintf_r():
 80001964:	ce3e                	sw	a5,28(sp)
 80001966:	a885                	j	800019d6 <_vfiprintf_r+0x174>
 80001968:	00001797          	auipc	a5,0x1
-8000196c:	ac478793          	addi	a5,a5,-1340 # 8000242c <__sf_fake_stdout>
+8000196c:	ac078793          	addi	a5,a5,-1344 # 80002428 <__sf_fake_stdout>
 80001970:	00f49563          	bne	s1,a5,8000197a <_vfiprintf_r+0x118>
 80001974:	0089a483          	lw	s1,8(s3)
 80001978:	b70d                	j	8000189a <_vfiprintf_r+0x38>
 8000197a:	00001797          	auipc	a5,0x1
-8000197e:	a7278793          	addi	a5,a5,-1422 # 800023ec <__sf_fake_stderr>
+8000197e:	a6e78793          	addi	a5,a5,-1426 # 800023e8 <__sf_fake_stderr>
 80001982:	f0f49ce3          	bne	s1,a5,8000189a <_vfiprintf_r+0x38>
 80001986:	00c9a483          	lw	s1,12(s3)
 8000198a:	bf01                	j	8000189a <_vfiprintf_r+0x38>
@@ -3995,11 +3995,11 @@ _vfiprintf_r():
 80001a3c:	00044583          	lbu	a1,0(s0)
 80001a40:	460d                	li	a2,3
 80001a42:	00001517          	auipc	a0,0x1
-80001a46:	a1250513          	addi	a0,a0,-1518 # 80002454 <__sf_fake_stdout+0x28>
+80001a46:	a0e50513          	addi	a0,a0,-1522 # 80002450 <__sf_fake_stdout+0x28>
 80001a4a:	23ed                	jal	80002034 <memchr>
 80001a4c:	cd11                	beqz	a0,80001a68 <_vfiprintf_r+0x206>
 80001a4e:	00001797          	auipc	a5,0x1
-80001a52:	a0678793          	addi	a5,a5,-1530 # 80002454 <__sf_fake_stdout+0x28>
+80001a52:	a0278793          	addi	a5,a5,-1534 # 80002450 <__sf_fake_stdout+0x28>
 80001a56:	8d1d                	sub	a0,a0,a5
 80001a58:	04000793          	li	a5,64
 80001a5c:	00a797b3          	sll	a5,a5,a0
@@ -4010,7 +4010,7 @@ _vfiprintf_r():
 80001a68:	00044583          	lbu	a1,0(s0)
 80001a6c:	4619                	li	a2,6
 80001a6e:	00001517          	auipc	a0,0x1
-80001a72:	9ea50513          	addi	a0,a0,-1558 # 80002458 <__sf_fake_stdout+0x2c>
+80001a72:	9e650513          	addi	a0,a0,-1562 # 80002454 <__sf_fake_stdout+0x2c>
 80001a76:	00140913          	addi	s2,s0,1
 80001a7a:	02b10423          	sb	a1,40(sp)
 80001a7e:	2b5d                	jal	80002034 <memchr>
@@ -4204,7 +4204,7 @@ _printf_i():
 80001c52:	4655                	li	a2,21
 80001c54:	fef666e3          	bltu	a2,a5,80001c40 <_printf_i+0x3e>
 80001c58:	00001617          	auipc	a2,0x1
-80001c5c:	83060613          	addi	a2,a2,-2000 # 80002488 <__sf_fake_stdout+0x5c>
+80001c5c:	82c60613          	addi	a2,a2,-2004 # 80002484 <__sf_fake_stdout+0x5c>
 80001c60:	078a                	slli	a5,a5,0x2
 80001c62:	97b2                	add	a5,a5,a2
 80001c64:	439c                	lw	a5,0(a5)
@@ -4230,7 +4230,7 @@ _printf_i():
 80001c9a:	40f007b3          	neg	a5,a5
 80001c9e:	04e401a3          	sb	a4,67(s0)
 80001ca2:	00000617          	auipc	a2,0x0
-80001ca6:	7be60613          	addi	a2,a2,1982 # 80002460 <__sf_fake_stdout+0x34>
+80001ca6:	7ba60613          	addi	a2,a2,1978 # 8000245c <__sf_fake_stdout+0x34>
 80001caa:	4829                	li	a6,10
 80001cac:	a0a1                	j	80001cf4 <_printf_i+0xf2>
 80001cae:	0407f613          	andi	a2,a5,64
@@ -4254,7 +4254,7 @@ _printf_i():
 80001cda:	0007d783          	lhu	a5,0(a5)
 80001cde:	06f00713          	li	a4,111
 80001ce2:	00000617          	auipc	a2,0x0
-80001ce6:	77e60613          	addi	a2,a2,1918 # 80002460 <__sf_fake_stdout+0x34>
+80001ce6:	77a60613          	addi	a2,a2,1914 # 8000245c <__sf_fake_stdout+0x34>
 80001cea:	0ee80463          	beq	a6,a4,80001dd2 <_printf_i+0x1d0>
 80001cee:	4829                	li	a6,10
 80001cf0:	040401a3          	sb	zero,67(s0)
@@ -4310,7 +4310,7 @@ _printf_i():
 80001d6e:	8082                	ret
 80001d70:	050582a3          	sb	a6,69(a1)
 80001d74:	00000617          	auipc	a2,0x0
-80001d78:	6ec60613          	addi	a2,a2,1772 # 80002460 <__sf_fake_stdout+0x34>
+80001d78:	6e860613          	addi	a2,a2,1768 # 8000245c <__sf_fake_stdout+0x34>
 80001d7c:	400c                	lw	a1,0(s0)
 80001d7e:	4308                	lw	a0,0(a4)
 80001d80:	0805f813          	andi	a6,a1,128
@@ -4334,7 +4334,7 @@ _printf_i():
 80001db0:	07800793          	li	a5,120
 80001db4:	04f402a3          	sb	a5,69(s0)
 80001db8:	00000617          	auipc	a2,0x0
-80001dbc:	6bc60613          	addi	a2,a2,1724 # 80002474 <__sf_fake_stdout+0x48>
+80001dbc:	6b860613          	addi	a2,a2,1720 # 80002470 <__sf_fake_stdout+0x48>
 80001dc0:	bf75                	j	80001d7c <_printf_i+0x17a>
 80001dc2:	0405f813          	andi	a6,a1,64
 80001dc6:	c308                	sw	a0,0(a4)

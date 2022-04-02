@@ -57,13 +57,18 @@ hello_world.siz \
 
 
 # All Target
-all: hello_world.elf secondary-outputs
+all:
+	$(MAKE) --no-print-directory pre-build
+	$(MAKE) --no-print-directory main-build
+
+# Main-build Target
+main-build: hello_world.elf secondary-outputs
 
 # Tool invocations
 hello_world.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GNU RISC-V Cross C++ Linker'
-	riscv-nuclei-elf-g++ -march=rv32imac -mabi=ilp32 -mcmodel=medany -mno-save-restore -O2 -ffunction-sections -fdata-sections -fno-common  -g -T "C:\Users\Anuo\NucleiStudio_workspace\hello_world\hbird_sdk\SoC\hbirdv2\Board\mcu200t\Source\GCC\gcc_hbirdv2_ilm.ld" -nostartfiles -Xlinker --gc-sections -Wl,-Map,"hello_world.map" --specs=nano.specs --specs=nosys.specs -u _isatty -u _write -u _sbrk -u _read -u _close -u _fstat -u _lseek -o "hello_world.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	riscv-nuclei-elf-g++ -march=rv32imac -mabi=ilp32 -mcmodel=medany -mno-save-restore -O2 -ffunction-sections -fdata-sections -fno-common  -g -T "D:\e203_35T\nuclei_project\hello_world\hbird_sdk\SoC\hbirdv2\Board\mcu200t\Source\GCC\gcc_hbirdv2_ilm.ld" -nostartfiles -Xlinker --gc-sections -Wl,-Map,"hello_world.map" --specs=nano.specs --specs=nosys.specs -u _isatty -u _write -u _sbrk -u _read -u _close -u _fstat -u _lseek -o "hello_world.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
@@ -91,12 +96,16 @@ clean:
 	-$(RM) $(CC_DEPS)$(C++_DEPS)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(SECONDARY_FLASH)$(SECONDARY_LIST)$(SECONDARY_SIZE)$(ASM_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(CPP_DEPS) hello_world.elf
 	-@echo ' '
 
+pre-build:
+	-riscv-nuclei-elf-objcopy -O verilog "hello_world.elf" "hello_world.verilog";sed -i 's/@800/@000/g' "hello_world.verilog"; sed -i 's/@00002FB8/@00002000/g' "hello_world.verilog";
+	-@echo ' '
+
 post-build:
 	-riscv-nuclei-elf-objcopy -O verilog "hello_world.elf" "hello_world.verilog";sed -i 's/@800/@000/g' "hello_world.verilog"; sed -i 's/@00002FB8/@00002000/g' "hello_world.verilog";
 	-@echo ' '
 
 secondary-outputs: $(SECONDARY_FLASH) $(SECONDARY_LIST) $(SECONDARY_SIZE)
 
-.PHONY: all clean dependents post-build
+.PHONY: all clean dependents main-build pre-build post-build
 
 -include ../makefile.targets
