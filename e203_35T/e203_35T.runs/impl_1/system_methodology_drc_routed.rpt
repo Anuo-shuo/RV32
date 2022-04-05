@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Sat Apr  2 11:02:02 2022
+| Date         : Tue Apr  5 19:21:27 2022
 | Host         : Anuo running 64-bit major release  (build 9200)
 | Command      : report_methodology -file system_methodology_drc_routed.rpt -pb system_methodology_drc_routed.pb -rpx system_methodology_drc_routed.rpx
 | Design       : system
@@ -23,15 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 1098
+             Violations found: 1034
 +-----------+------------------+-----------------------------------------+------------+
 | Rule      | Severity         | Description                             | Violations |
 +-----------+------------------+-----------------------------------------+------------+
 | TIMING-8  | Critical Warning | No common period between related clocks | 1          |
 | TIMING-17 | Critical Warning | Non-clocked sequential cell             | 1000       |
 | LUTAR-1   | Warning          | LUT drives async reset alert            | 8          |
-| SYNTH-15  | Warning          | Byte wide write enable not inferred     | 32         |
-| SYNTH-16  | Warning          | Address collision                       | 32         |
 | TIMING-16 | Warning          | Large setup violation                   | 1          |
 | TIMING-20 | Warning          | Non-clocked latch                       | 24         |
 +-----------+------------------+-----------------------------------------+------------+
@@ -5045,7 +5043,7 @@ Related violations: <none>
 
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/qout_r[10]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_ext_irq_sync/sync_gen[0].i_is_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_ext_irq_sync/sync_gen[1].i_is_not_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_tmr_irq_sync/sync_gen[0].i_is_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_tmr_irq_sync/sync_gen[1].i_is_not_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_dbg_irq_sync/sync_gen[0].i_is_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_dbg_irq_sync/sync_gen[1].i_is_not_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_sft_irq_sync/sync_gen[0].i_is_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_sft_irq_sync/sync_gen[1].i_is_not_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_nice_core/gen_rowbuf[0].rowbuf_dfflr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_nice_core/gen_rowbuf[0].rowbuf_dfflr/qout_r_reg[10]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_nice_core/gen_rowbuf[0].rowbuf_dfflr/qout_r_reg[11]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_nice_core/gen_rowbuf[0].rowbuf_dfflr/qout_r_reg[12]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_nice_core/gen_rowbuf[0].rowbuf_dfflr/qout_r_reg[13]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_nice_core/gen_rowbuf[0].rowbuf_dfflr/qout_r_reg[14]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_nice_core/gen_rowbuf[0].rowbuf_dfflr/qout_r_reg[15]/CLR (the first 15 of 738 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/u_itcm/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_b.B/doutb[0]_INST_0, with 2 or more inputs, drives asynchronous preset/clear pin(s) dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_dtcm_ctrl/u_dtcm_icb_arbt/arbt_num_gt_1_gen.dp_1.u_sirv_gnrl_rspid_fifo/dp_gt_0.vld_dfflr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_dtcm_ctrl/u_sram_icb_ctrl/u_byp_icb_cmd_buf/u_bypbuf_fifo/dp_gt0.vec_0_dfflrs/qout_r_reg[0]/PRE, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_dtcm_ctrl/u_sram_icb_ctrl/u_byp_icb_cmd_buf/u_bypbuf_fifo/dp_gt0.vec_31_dfflr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_dtcm_ctrl/u_sram_icb_ctrl/u_sirv_1cyc_sram_ctrl/u_e1_stage/dp_gt_0.vld_dfflr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_ext_irq_sync/sync_gen[0].i_is_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_ext_irq_sync/sync_gen[1].i_is_not_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_tmr_irq_sync/sync_gen[0].i_is_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_tmr_irq_sync/sync_gen[1].i_is_not_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_dbg_irq_sync/sync_gen[0].i_is_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_dbg_irq_sync/sync_gen[1].i_is_not_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_sft_irq_sync/sync_gen[0].i_is_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_irq_sync/master_gen.u_sft_irq_sync/sync_gen[1].i_is_not_0.sync_dffr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_itcm_ctrl/u_itcm_icb_arbt/arbt_num_gt_1_gen.dp_1.u_sirv_gnrl_rspid_fifo/dp_gt_0.vld_dfflr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_itcm_ctrl/u_sram_icb_ctrl/u_sirv_1cyc_sram_ctrl/u_e1_stage/dp_gt_0.vld_dfflr/qout_r_reg[0]/CLR, dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_cpu/u_e203_itcm_ctrl/u_sram_icb_ctrl/u_byp_icb_cmd_buf/u_bypbuf_fifo/dp_gt0.vec_0_dfflrs/qout_r_reg[0]/PRE (the first 15 of 738 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 LUTAR-1#2 Warning
@@ -5083,329 +5081,9 @@ LUT drives async reset alert
 LUT cell dut/u_e203_subsys_top/u_sirv_debug_module/u_sirv_debug_csr/dcause_dfflr/qout_r[0]_i_9__19, with 2 or more inputs, drives asynchronous preset/clear pin(s) dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[10]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[11]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[12]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[13]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[14]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[15]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[1]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[2]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[3]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[4]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[5]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[6]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[7]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[8]/CLR, dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen.u_sirv_jtag_dtm/FSM_onehot_jtagStateReg_reg[9]/CLR (the first 15 of 153 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-SYNTH-15#1 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#2 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#3 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#4 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#5 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#6 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#7 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#8 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#9 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#10 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#11 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#12 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#13 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_0 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#14 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_1 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#15 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_2 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#16 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3 because address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#17 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#18 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_1 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#19 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_0 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#20 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_1 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#21 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_0 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#22 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_1 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#23 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_0 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#24 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_1 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#25 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_4_0 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#26 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_4_1 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#27 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_5_0 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#28 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_5_1 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#29 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_6_0 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#30 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_6_1 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#31 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_7_0 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-15#32 Warning
-Byte wide write enable not inferred  
-Byte wide write enable (BWWE) is not inferred for Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_7_1 because address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired..
-Related violations: <none>
-
-SYNTH-16#1 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#2 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#3 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_2 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#4 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_3 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#5 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#6 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#7 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_2 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#8 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_3 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#9 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#10 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#11 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_2 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#12 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_3 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#13 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#14 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#15 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_2 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#16 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#17 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#18 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#19 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#20 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#21 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#22 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#23 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#24 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#25 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_4_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#26 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_4_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#27 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_5_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#28 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_5_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#29 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_6_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#30 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_6_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#31 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_7_0 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
-SYNTH-16#32 Warning
-Address collision  
-Block RAM dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_7_1 may get memory collision error if read and write address collide. Use of address collision resolution circuitry is recommended.
-Related violations: <none>
-
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -3.254 ns between low_clk/clk_out_reg/C (clocked by clk_out1_mmcm) and dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_perips_apb_pwm/u_tim1/u_in_stage/r_ls_clk_sync_reg[0]/D (clocked by clk_out2_mmcm). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.251 ns between low_clk/clk_out_reg/C (clocked by clk_out1_mmcm) and dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_subsys_perips/u_perips_apb_pwm/u_tim1/u_in_stage/r_ls_clk_sync_reg[0]/D (clocked by clk_out2_mmcm). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-20#1 Warning

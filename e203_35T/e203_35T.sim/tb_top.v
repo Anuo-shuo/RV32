@@ -1,4 +1,4 @@
-
+`timescale 1ns/1ns
 `include "e203_defines.v"
 
 module tb_top();
@@ -261,13 +261,13 @@ module tb_top();
   end
 
 
-
+/*
 
   integer i;
 
     reg [7:0] itcm_mem [0:(`E203_ITCM_RAM_DP*8)-1];
     initial begin
-      $readmemh({testcase, ".verilog"}, itcm_mem);
+    / $readmemh({testcase, "D:/e203_35T/programmer.verilog"}, itcm_mem);
 
       for (i=0;i<(`E203_ITCM_RAM_DP);i=i+1) begin
           `ITCM.mem_r[i][00+7:00] = itcm_mem[i*8+0];
@@ -279,7 +279,6 @@ module tb_top();
           `ITCM.mem_r[i][48+7:48] = itcm_mem[i*8+6];
           `ITCM.mem_r[i][56+7:56] = itcm_mem[i*8+7];
       end
-
         $display("ITCM 0x00: %h", `ITCM.mem_r[8'h00]);
         $display("ITCM 0x01: %h", `ITCM.mem_r[8'h01]);
         $display("ITCM 0x02: %h", `ITCM.mem_r[8'h02]);
@@ -291,7 +290,7 @@ module tb_top();
         $display("ITCM 0x16: %h", `ITCM.mem_r[8'h16]);
         $display("ITCM 0x20: %h", `ITCM.mem_r[8'h20]);
 
-    end 
+    end */
 
 
 

@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../e203_35T.srcs/sources_1/ip/blk_mem_gen_itcm/sim/blk_mem_gen_itcm.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

@@ -1,7 +1,4 @@
-`timescale 1ns/100ps
-
-
-
+`timescale 1ns/1ps
 
 module system
 (
@@ -10,7 +7,7 @@ module system
 
   //input wire fpga_rst,//FPGA_RESET-T6
   //input wire mcu_rst,//MCU_RESET-P20
-input wire ck_rst_low,
+  input wire ck_rst_low,
 
   // Dedicated QSPI interface
   output wire qspi0_cs,
@@ -95,7 +92,7 @@ input wire ck_rst_low,
   // Clock & Reset
   wire clk_8388;
   wire clk_16M;
-  wire CLK32768KHZ;
+  
 
 
   mmcm ip_mmcm
@@ -103,12 +100,13 @@ input wire ck_rst_low,
     .resetn(ck_rst),
     .clk_in1(CLK100MHZ),
     .clk_out1(clk_8388),
-    .clk_out2(clk_16M), // 16 MHz, this clock we set to 16MHz
+    .clk_out2(clk_16M), // 16 MHz, this clock we set to 16MHz 
     .locked(mmcm_locked)
   );
- //assign ck_rst = ~ck_rst_low;    //FPGA与MCU同时复位
 
-  assign ck_rst = ck_rst_low;    //FPGA与MCU同时复位
+  //assign ck_rst = fpga_rst & mcu_rst;
+
+  assign ck_rst = ck_rst_low;    //FPGA涓嶮CU鍚屾椂澶嶄綅
 
   reset_sys ip_reset_sys
   (
@@ -125,7 +123,7 @@ input wire ck_rst_low,
   );
 
   //=================================================
-  clkdivider low_clk
+    clkdivider low_clk
 (
   .clk      (clk_8388),
   .reset    (ck_rst),
@@ -157,8 +155,8 @@ input wire ck_rst_low,
   IOBUF
   #(
     .DRIVE(12),
-   // .IBUF_LOW_PWR("TRUE"),
-    .IOSTANDARD("LVCMOS33"),
+    .IBUF_LOW_PWR("TRUE"),
+    .IOSTANDARD("DEFAULT"),
     .SLEW("SLOW")
   )
   gpioA_iobuf[31:0]
@@ -172,8 +170,8 @@ input wire ck_rst_low,
   IOBUF
   #(
     .DRIVE(12),
-   // .IBUF_LOW_PWR("TRUE"),
-    .IOSTANDARD("LVCMOS33"),
+    .IBUF_LOW_PWR("TRUE"),
+    .IOSTANDARD("DEFAULT"),
     .SLEW("SLOW")
   )
   gpioB_iobuf[31:0]
@@ -190,8 +188,8 @@ input wire ck_rst_low,
   IOBUF
   #(
     .DRIVE(12),
-   // .IBUF_LOW_PWR("TRUE"),
-    .IOSTANDARD("LVCMOS33"),
+    .IBUF_LOW_PWR("TRUE"),
+    .IOSTANDARD("DEFAULT"),
     .SLEW("SLOW")
   )
   IOBUF_jtag_TCK
@@ -208,8 +206,8 @@ input wire ck_rst_low,
   IOBUF
   #(
     .DRIVE(12),
-   // .IBUF_LOW_PWR("TRUE"),
-    .IOSTANDARD("LVCMOS33"),
+    .IBUF_LOW_PWR("TRUE"),
+    .IOSTANDARD("DEFAULT"),
     .SLEW("SLOW")
   )
   IOBUF_jtag_TMS
@@ -226,8 +224,8 @@ input wire ck_rst_low,
   IOBUF
   #(
     .DRIVE(12),
-   // .IBUF_LOW_PWR("TRUE"),
-    .IOSTANDARD("LVCMOS33"),
+    .IBUF_LOW_PWR("TRUE"),
+    .IOSTANDARD("DEFAULT"),
     .SLEW("SLOW")
   )
   IOBUF_jtag_TDI
@@ -244,8 +242,8 @@ input wire ck_rst_low,
   IOBUF
   #(
     .DRIVE(12),
-    //.IBUF_LOW_PWR("TRUE"),
-    .IOSTANDARD("LVCMOS33"),
+    .IBUF_LOW_PWR("TRUE"),
+    .IOSTANDARD("DEFAULT"),
     .SLEW("SLOW")
   )
   IOBUF_jtag_TDO
@@ -276,7 +274,7 @@ input wire ck_rst_low,
   assign pmu_padrst = dut_io_pads_aon_pmu_padrst_o_oval;		
 
   // model select
-  assign dut_io_pads_bootrom_n_i_ival  = 1'b0;   //!!!1'b0从itcm启动，1'b1从flash启动
+  assign dut_io_pads_bootrom_n_i_ival  = 1'b0;   //
   assign dut_io_pads_dbgmode0_n_i_ival = 1'b1;
   assign dut_io_pads_dbgmode1_n_i_ival = 1'b1;
   assign dut_io_pads_dbgmode2_n_i_ival = 1'b1;
@@ -342,8 +340,8 @@ input wire ck_rst_low,
   IOBUF
   #(
     .DRIVE(12),
-    //.IBUF_LOW_PWR("TRUE"),
-    .IOSTANDARD("LVCMOS33"),
+    .IBUF_LOW_PWR("TRUE"),
+    .IOSTANDARD("DEFAULT"),
     .SLEW("SLOW")
   )
   IOBUF_dwakeup_n

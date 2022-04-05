@@ -47,7 +47,7 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY_FLASH += \
-hello_world.bin \
+hello_world.hex \
 
 SECONDARY_LIST += \
 hello_world.lst \
@@ -73,9 +73,9 @@ hello_world.elf: $(OBJS) $(USER_OBJS)
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
 
-hello_world.bin: hello_world.elf
+hello_world.hex: hello_world.elf
 	@echo 'Invoking: GNU RISC-V Cross Create Flash Image'
-	riscv-nuclei-elf-objcopy -O binary "hello_world.elf"  "hello_world.bin"
+	riscv-nuclei-elf-objcopy -O ihex "hello_world.elf"  "hello_world.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 

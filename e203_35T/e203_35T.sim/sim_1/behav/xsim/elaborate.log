@@ -1,47 +1,17 @@
 Vivado Simulator 2019.1
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto f9edd969d281426ca4bd915f0fe9bc77 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L lib_cdc_v1_0_2 -L proc_sys_reset_v5_0_13 -L blk_mem_gen_v8_4_3 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_system_behav xil_defaultlib.tb_system xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto f9edd969d281426ca4bd915f0fe9bc77 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L lib_cdc_v1_0_2 -L proc_sys_reset_v5_0_13 -L blk_mem_gen_v8_4_3 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-3283] element index 39 into 'mem_r' is out of bounds [D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram.v:156]
-WARNING: [VRFC 10-3283] element index 47 into 'mem_r' is out of bounds [D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram.v:157]
-WARNING: [VRFC 10-3283] element index 55 into 'mem_r' is out of bounds [D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram.v:158]
-WARNING: [VRFC 10-3283] element index 63 into 'mem_r' is out of bounds [D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram.v:159]
+WARNING: [VRFC 10-3091] actual bit length 14 differs from formal bit length 13 for port 'addra' [D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram.v:28]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 64 for port 'dina' [D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram.v:29]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 8 for port 'wea' [D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram.v:30]
+WARNING: [VRFC 10-3091] actual bit length 14 differs from formal bit length 13 for port 'addrb' [D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram.v:32]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 64 for port 'doutb' [D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram.v:33]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.numeric_std
-Compiling package unisim.vcomponents
-Compiling package ieee.vital_timing
-Compiling package ieee.vital_primitives
-Compiling package unisim.vpkg
-Compiling package ieee.std_logic_arith
-Compiling package synopsys.attributes
-Compiling package ieee.std_logic_misc
-Compiling module unisims_ver.IBUF
-Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=16.0,...
-Compiling module unisims_ver.BUFG
-Compiling module xil_defaultlib.mmcm_clk_wiz
-Compiling module xil_defaultlib.mmcm
-Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
-Compiling architecture fdre_v of entity unisim.FDRE [\FDRE(init='1')\]
-Compiling architecture fdr_v of entity unisim.FDR [fdr_default]
-Compiling architecture implementation of entity lib_cdc_v1_0_2.cdc_sync [\cdc_sync(c_vector_width=2,c_mtb...]
-Compiling architecture srl16e_v of entity unisim.SRL16E [\SRL16E(init="1111111111111111")...]
-Compiling architecture srl16_v of entity unisim.SRL16 [\SRL16(init="1111111111111111")(...]
-Compiling architecture imp of entity proc_sys_reset_v5_0_13.lpf [\lpf(c_ext_rst_width=4,c_aux_rst...]
-Compiling architecture imp of entity proc_sys_reset_v5_0_13.upcnt_n [\upcnt_n(c_size=6)\]
-Compiling architecture imp of entity proc_sys_reset_v5_0_13.sequence_psr [sequence_psr_default]
-Compiling architecture imp of entity proc_sys_reset_v5_0_13.proc_sys_reset [\proc_sys_reset(c_family="artix7...]
-Compiling architecture reset_sys_arch of entity xil_defaultlib.reset_sys [reset_sys_default]
-Compiling module xil_defaultlib.clkdivider
-Compiling module unisims_ver.PULLUP
-Compiling module unisims_ver.IOBUF
-Compiling module unisims_ver.IOBUF(IOSTANDARD="LVCMOS33")
 Compiling module xil_defaultlib.sirv_AsyncResetReg
 Compiling module xil_defaultlib.sirv_AsyncResetRegVec_129
 Compiling module xil_defaultlib.sirv_ResetCatchAndSync_2
@@ -135,6 +105,12 @@ Compiling module xil_defaultlib.sirv_1cyc_sram_ctrl(AW=16,AW_LSB...
 Compiling module xil_defaultlib.sirv_sram_icb_ctrl(AW=16,AW_LSB=...
 Compiling module xil_defaultlib.e203_dtcm_ctrl
 Compiling module xil_defaultlib.e203_cpu
+Compiling module blk_mem_gen_v8_4_3.blk_mem_gen_v8_4_3_output_stage(...
+Compiling module blk_mem_gen_v8_4_3.blk_mem_gen_v8_4_3_output_stage(...
+Compiling module blk_mem_gen_v8_4_3.blk_mem_gen_v8_4_3_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_3.blk_mem_gen_v8_4_3_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_3.blk_mem_gen_v8_4_3(C_FAMILY="art...
+Compiling module xil_defaultlib.blk_mem_gen_itcm
 Compiling module xil_defaultlib.sirv_sim_ram(DP=8192,FORCE_X2ZER...
 Compiling module xil_defaultlib.sirv_gnrl_ram(DP=8192,DW=64,FORC...
 Compiling module xil_defaultlib.e203_itcm_ram
@@ -262,7 +238,6 @@ Compiling module xil_defaultlib.sirv_aon_wrapper
 Compiling module xil_defaultlib.sirv_aon_top
 Compiling module xil_defaultlib.e203_subsys_top
 Compiling module xil_defaultlib.e203_soc_top
-Compiling module xil_defaultlib.system_default
-Compiling module xil_defaultlib.tb_system
+Compiling module xil_defaultlib.tb_top
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_system_behav
+Built simulation snapshot tb_top_behav

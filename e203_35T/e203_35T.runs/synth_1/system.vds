@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sat Apr  2 10:45:14 2022
-# Process ID: 13300
+# Start of session at: Tue Apr  5 19:04:11 2022
+# Process ID: 9404
 # Current directory: D:/e203_35T/e203_35T/e203_35T.runs/synth_1
 # Command line: vivado.exe -log system.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system.tcl
 # Log file: D:/e203_35T/e203_35T/e203_35T.runs/synth_1/system.vds
@@ -16,18 +16,18 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10692 
+INFO: Helper process launched with PID 12480 
 WARNING: [Synth 8-2507] parameter declaration becomes local in apb_uart_sv with formal parameter declaration list [D:/e203_35T/e203_35T/e203_35T.rtl/perips/apb_uart/apb_uart.v:36]
 WARNING: [Synth 8-2507] parameter declaration becomes local in apb_uart_sv with formal parameter declaration list [D:/e203_35T/e203_35T/e203_35T.rtl/perips/apb_uart/apb_uart.v:38]
 WARNING: [Synth 8-2507] parameter declaration becomes local in apb_uart_sv with formal parameter declaration list [D:/e203_35T/e203_35T/e203_35T.rtl/perips/apb_uart/apb_uart.v:39]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 697.824 ; gain = 189.195
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 698.906 ; gain = 187.488
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'system' [D:/e203_35T/e203_35T/e203_35T.rtl/system.v:6]
-INFO: [Synth 8-6157] synthesizing module 'mmcm' [D:/e203_35T/e203_35T/e203_35T.runs/synth_1/.Xil/Vivado-13300-Anuo/realtime/mmcm_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mmcm' (1#1) [D:/e203_35T/e203_35T/e203_35T.runs/synth_1/.Xil/Vivado-13300-Anuo/realtime/mmcm_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'reset_sys' [D:/e203_35T/e203_35T/e203_35T.runs/synth_1/.Xil/Vivado-13300-Anuo/realtime/reset_sys_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'reset_sys' (2#1) [D:/e203_35T/e203_35T/e203_35T.runs/synth_1/.Xil/Vivado-13300-Anuo/realtime/reset_sys_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system' [D:/e203_35T/e203_35T/e203_35T.rtl/system.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mmcm' [D:/e203_35T/e203_35T/e203_35T.runs/synth_1/.Xil/Vivado-9404-Anuo/realtime/mmcm_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mmcm' (1#1) [D:/e203_35T/e203_35T/e203_35T.runs/synth_1/.Xil/Vivado-9404-Anuo/realtime/mmcm_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'reset_sys' [D:/e203_35T/e203_35T/e203_35T.runs/synth_1/.Xil/Vivado-9404-Anuo/realtime/reset_sys_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'reset_sys' (2#1) [D:/e203_35T/e203_35T/e203_35T.runs/synth_1/.Xil/Vivado-9404-Anuo/realtime/reset_sys_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'clkdivider' [D:/e203_35T/e203_35T/e203_35T.rtl/clkdivider.v:2]
 INFO: [Synth 8-6155] done synthesizing module 'clkdivider' (3#1) [D:/e203_35T/e203_35T/e203_35T.rtl/clkdivider.v:2]
 INFO: [Synth 8-6157] synthesizing module 'PULLUP' [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:69747]
@@ -41,7 +41,7 @@ INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (5#1) [D:/Xilinx/Vivado/20
 INFO: [Synth 8-6157] synthesizing module 'IOBUF__parameterized0' [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
-	Parameter IOSTANDARD bound to: LVCMOS33 - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IOBUF__parameterized0' (5#1) [D:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115]
 INFO: [Synth 8-6157] synthesizing module 'e203_soc_top' [D:/e203_35T/e203_35T/e203_35T.rtl/soc/e203_soc_top.v:19]
@@ -454,7 +454,7 @@ INFO: [Synth 8-6155] done synthesizing module 'e203_cpu' (64#1) [D:/e203_35T/e20
 	Parameter DW bound to: 64 - type: integer 
 	Parameter MW bound to: 8 - type: integer 
 	Parameter AW bound to: 13 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'sirv_sim_ram' (65#1) [D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_itcm' (65#1) [D:/e203_35T/e203_35T/e203_35T.runs/synth_1/.Xil/Vivado-9404-Anuo/realtime/blk_mem_gen_itcm_stub.v:6]
 INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 	Parameter DP bound to: 16384 - type: integer 
 	Parameter DW bound to: 32 - type: integer 
@@ -466,6 +466,9 @@ INFO: [Common 17-14] Message 'Synth 8-6155' appears 100 times and further instan
 	Parameter DW bound to: 32 - type: integer 
 	Parameter MW bound to: 4 - type: integer 
 	Parameter AW bound to: 14 - type: integer 
+WARNING: [Synth 8-689] width (14) of port connection 'addra' does not match port width (13) of module 'blk_mem_gen_itcm' [D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram.v:28]
+WARNING: [Synth 8-689] width (14) of port connection 'addrb' does not match port width (13) of module 'blk_mem_gen_itcm' [D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram.v:32]
+WARNING: [Synth 8-689] width (32) of port connection 'doutb' does not match port width (64) of module 'blk_mem_gen_itcm' [D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram.v:33]
 	Parameter PLIC_IRQ_NUM bound to: 17 - type: integer 
 	Parameter PLIC_PRIO_WIDTH bound to: 3 - type: integer 
 	Parameter PLIC_IRQ_NUM bound to: 17 - type: integer 
@@ -1013,7 +1016,7 @@ WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_
 WARNING: [Synth 8-3331] design sirv_pmu_core has unconnected port io_regs_cause_write_bits[5]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 937.234 ; gain = 428.605
+Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 936.141 ; gain = 424.723
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1026,10 +1029,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 945.805 ; gain = 437.176
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:28 . Memory (MB): peak = 936.141 ; gain = 424.723
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 945.805 ; gain = 437.176
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:28 . Memory (MB): peak = 936.141 ; gain = 424.723
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 73 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1041,38 +1044,44 @@ Parsing XDC File [d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/mmcm/mmcm/mmcm
 Finished Parsing XDC File [d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/mmcm/mmcm/mmcm_in_context.xdc] for cell 'ip_mmcm'
 Parsing XDC File [d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/reset_sys/reset_sys/reset_sys_in_context.xdc] for cell 'ip_reset_sys'
 Finished Parsing XDC File [d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/reset_sys/reset_sys/reset_sys_in_context.xdc] for cell 'ip_reset_sys'
-Parsing XDC File [D:/e203_35T/e203_35T/e203_35T.srcs/constrs_1/new/e203.xdc]
-Finished Parsing XDC File [D:/e203_35T/e203_35T/e203_35T.srcs/constrs_1/new/e203.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/e203_35T/e203_35T/e203_35T.srcs/constrs_1/new/e203.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_propImpl.xdc].
+Parsing XDC File [d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_itcm/blk_mem_gen_itcm/blk_mem_gen_itcm_in_context.xdc] for cell 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/u_itcm'
+Finished Parsing XDC File [d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_itcm/blk_mem_gen_itcm/blk_mem_gen_itcm_in_context.xdc] for cell 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/u_itcm'
+Parsing XDC File [d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_itcm/blk_mem_gen_itcm/blk_mem_gen_itcm_in_context.xdc] for cell 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/u_itcm'
+Finished Parsing XDC File [d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_itcm/blk_mem_gen_itcm/blk_mem_gen_itcm_in_context.xdc] for cell 'dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/u_itcm'
+Parsing XDC File [D:/e203_35T/e203_35T/e203.xdc]
+Finished Parsing XDC File [D:/e203_35T/e203_35T/e203.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/e203_35T/e203_35T/e203.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/system_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1129.449 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1118.047 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 73 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 73 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.233 . Memory (MB): peak = 1129.449 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.245 . Memory (MB): peak = 1118.047 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:39 ; elapsed = 00:00:49 . Memory (MB): peak = 1129.449 ; gain = 620.820
+Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:00:52 . Memory (MB): peak = 1118.047 ; gain = 606.629
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:39 ; elapsed = 00:00:49 . Memory (MB): peak = 1129.449 ; gain = 620.820
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:40 ; elapsed = 00:00:52 . Memory (MB): peak = 1118.047 ; gain = 606.629
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/mmcm/mmcm/mmcm_in_context.xdc, line 4).
 Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/mmcm/mmcm/mmcm_in_context.xdc, line 5).
-WARNING: set_property CLOCK_DEDICATED_ROUTE could not find object (constraint file  D:/e203_35T/e203_35T/e203_35T.srcs/constrs_1/new/e203.xdc, line 79).
+WARNING: set_property CLOCK_DEDICATED_ROUTE could not find object (constraint file  D:/e203_35T/e203_35T/e203.xdc, line 79).
 Applied set_property DONT_TOUCH = true for ip_mmcm. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for ip_reset_sys. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/u_itcm. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/u_itcm. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:49 . Memory (MB): peak = 1129.449 ; gain = 620.820
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:52 . Memory (MB): peak = 1118.047 ; gain = 606.629
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'uart_rx'
 INFO: [Synth 8-802] inferred FSM for state register 'CS_reg' in module 'uart_tx'
@@ -1132,12 +1141,6 @@ INFO: [Synth 8-5546] ROM "r_timer3_ch3_lut" won't be mapped to RAM because it is
 INFO: [Synth 8-5546] ROM "r_event_sel_0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "r_clk_en" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'jtagStateReg_reg' in module 'sirv_jtag_dtm'
-INFO: [Synth 8-6430] The Block RAM "sirv_sim_ram:/mem[1].non_last.mem_r_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
-WARNING: [Synth 8-6841] Block RAM (mem[1].non_last.mem_r_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
-(address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired.)
-INFO: [Synth 8-6430] The Block RAM "sirv_sim_ram__parameterized0:/mem[1].non_last.mem_r_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
-WARNING: [Synth 8-6841] Block RAM (mem[1].non_last.mem_r_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
-(address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired.)
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -1238,10 +1241,8 @@ INFO: [Synth 8-3354] encoded FSM with state register 'c_state_reg' using encodin
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'jtagStateReg_reg' using encoding 'one-hot' in module 'sirv_jtag_dtm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:51 ; elapsed = 00:01:04 . Memory (MB): peak = 1129.449 ; gain = 620.820
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:51 ; elapsed = 00:01:08 . Memory (MB): peak = 1118.047 ; gain = 606.629
 ---------------------------------------------------------------------------------
-RAM Pipeline Warning: Read Address Register Found For RAM mem[1].non_last.mem_r_reg. We will not be able to pipeline it. This may degrade performance. 
-RAM Pipeline Warning: Read Address Register Found For RAM mem[1].non_last.mem_r_reg. We will not be able to pipeline it. This may degrade performance. 
 
 Report RTL Partitions: 
 +------+------------------------+------------+----------+
@@ -1249,7 +1250,7 @@ Report RTL Partitions:
 +------+------------------------+------------+----------+
 |1     |e203_subsys_perips__GB0 |           1|     39162|
 |2     |e203_subsys_perips__GB1 |           1|     10064|
-|3     |e203_subsys_main__GC0   |           1|     32231|
+|3     |e203_subsys_main__GC0   |           1|     31553|
 |4     |e203_subsys_top__GC0    |           1|      8720|
 |5     |system__GC0             |           1|       183|
 +------+------------------------+------------+----------+
@@ -1301,8 +1302,7 @@ Detailed RTL Component Info :
 	               24 Bit    Registers := 1     
 	               17 Bit    Registers := 2     
 	               16 Bit    Registers := 88    
-	               14 Bit    Registers := 3     
-	               13 Bit    Registers := 1     
+	               14 Bit    Registers := 2     
 	               12 Bit    Registers := 3     
 	               10 Bit    Registers := 2     
 	                9 Bit    Registers := 65    
@@ -1315,14 +1315,13 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 72    
 	                1 Bit    Registers := 693   
 +---RAMs : 
-	             512K Bit         RAMs := 2     
 	               64 Bit         RAMs := 2     
 +---Muxes : 
 	  16 Input    192 Bit        Muxes := 2     
 	   2 Input     91 Bit        Muxes := 1     
 	   4 Input     80 Bit        Muxes := 3     
 	   2 Input     80 Bit        Muxes := 9     
-	   2 Input     64 Bit        Muxes := 15    
+	   2 Input     64 Bit        Muxes := 1     
 	   2 Input     54 Bit        Muxes := 1     
 	   3 Input     43 Bit        Muxes := 1     
 	   2 Input     42 Bit        Muxes := 3     
@@ -1332,7 +1331,7 @@ Detailed RTL Component Info :
 	   2 Input     35 Bit        Muxes := 4     
 	   2 Input     34 Bit        Muxes := 1     
 	   2 Input     33 Bit        Muxes := 14    
-	   2 Input     32 Bit        Muxes := 100   
+	   2 Input     32 Bit        Muxes := 94    
 	   6 Input     32 Bit        Muxes := 3     
 	   4 Input     32 Bit        Muxes := 6     
 	  47 Input     32 Bit        Muxes := 1     
@@ -1349,7 +1348,7 @@ Detailed RTL Component Info :
 	   2 Input     14 Bit        Muxes := 4     
 	   2 Input     12 Bit        Muxes := 2     
 	   2 Input      9 Bit        Muxes := 16    
-	   2 Input      8 Bit        Muxes := 78    
+	   2 Input      8 Bit        Muxes := 76    
 	   5 Input      8 Bit        Muxes := 4     
 	   4 Input      8 Bit        Muxes := 3     
 	   6 Input      8 Bit        Muxes := 3     
@@ -4316,24 +4315,6 @@ Module sirv_gnrl_dffl__parameterized4__15
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
-Module sirv_sim_ram 
-Detailed RTL Component Info : 
-+---Registers : 
-	               13 Bit    Registers := 1     
-+---RAMs : 
-	             512K Bit         RAMs := 1     
-+---Muxes : 
-	   2 Input     64 Bit        Muxes := 14    
-	   2 Input      8 Bit        Muxes := 1     
-Module sirv_sim_ram__parameterized0 
-Detailed RTL Component Info : 
-+---Registers : 
-	               14 Bit    Registers := 1     
-+---RAMs : 
-	             512K Bit         RAMs := 1     
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 6     
-	   2 Input      8 Bit        Muxes := 1     
 Module sirv_gnrl_dffr__18 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -5614,20 +5595,6 @@ INFO: [Synth 8-5546] ROM "r_timer3_ch3_th" won't be mapped to RAM because it is 
 INFO: [Synth 8-5546] ROM "r_timer3_ch3_lut" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "r_event_sel_0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "r_clk_en" won't be mapped to RAM because it is too sparse
-RAM Pipeline Warning: Read Address Register Found For RAM u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg. We will not be able to pipeline it. This may degrade performance. 
-RAM Pipeline Warning: Read Address Register Found For RAM u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg. We will not be able to pipeline it. This may degrade performance. 
-INFO: [Synth 8-6430] The Block RAM "u_e203_subsys_maini_3/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
-WARNING: [Synth 8-6841] Block RAM (u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
-(address width (13) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired.)
-INFO: [Synth 8-4652] Swapped enable and write-enable on 16 RAM instances of RAM u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg to conserve power
-RAM Pipeline Warning: Read Address Register Found For RAM u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg. We will not be able to pipeline it. This may degrade performance. 
-RAM Pipeline Warning: Read Address Register Found For RAM u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg. We will not be able to pipeline it. This may degrade performance. 
-INFO: [Synth 8-6430] The Block RAM "u_e203_subsys_maini_3/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
-WARNING: [Synth 8-6841] Block RAM (u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
-(address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute "ram_decomp = power" if BWWE is desired.)
-INFO: [Synth 8-4652] Swapped enable and write-enable on 16 RAM instances of RAM u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg to conserve power
-RAM Pipeline Warning: Read Address Register Found For RAM u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg. We will not be able to pipeline it. This may degrade performance. 
-RAM Pipeline Warning: Read Address Register Found For RAM u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg. We will not be able to pipeline it. This may degrade performance. 
 INFO: [Synth 8-3886] merging instance 'u_e203_subsys_peripsi_1/u_sirv_qspi0_top/qspi_TLWidthWidget/Repeater_5_1/saved_address_reg[0]' (FDCE) to 'u_e203_subsys_peripsi_1/u_sirv_qspi0_top/qspi_TLWidthWidget/Repeater_5_1/saved_address_reg[1]'
 INFO: [Synth 8-3886] merging instance 'u_e203_subsys_peripsi_1/u_sirv_qspi0_top/qspi_TLWidthWidget/Repeater_5_1/saved_opcode_reg[1]' (FDCE) to 'u_e203_subsys_peripsi_1/u_sirv_qspi0_top/qspi_TLWidthWidget/Repeater_5_1/saved_address_reg[1]'
 INFO: [Synth 8-3886] merging instance 'u_e203_subsys_peripsi_1/u_sirv_qspi0_top/qspi_TLWidthWidget/Repeater_5_1/saved_opcode_reg[0]' (FDCE) to 'u_e203_subsys_peripsi_1/u_sirv_qspi0_top/qspi_TLWidthWidget/Repeater_5_1/saved_address_reg[1]'
@@ -5799,39 +5766,39 @@ INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_su
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_peripsi_2/\u_uart2_apb_icb2apb/u_rsp_fifo/dp_gt0.fifo_rf[0].fifo_rf_dffl/qout_r_reg[31] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_subsys_plic/\u_sirv_plic_top/u_sirv_plic_man/flop_o_irq.plic_irq_id_dffr/qout_r_reg[5] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_subsys_plic/\u_sirv_plic_top/u_sirv_plic_man/enab_r_i[0].irq_enab_dfflr/qout_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_dtcm_ctrl/u_sram_icb_ctrl/u_byp_icb_cmd_buf/u_bypbuf_fifo/dp_gt0.wptr_vec_0_dfflrs/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /\u_e203_dtcm_ctrl/u_sram_icb_ctrl/u_byp_icb_cmd_buf/u_bypbuf_fifo/dp_gt0.wptr_vec_0_dfflrs/qout_r_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_subsys_mems/\u_expl_axi_icb2axi/u_sirv_gnrl_axi_buffer/o_axi_rdata_fifo/dp_gt0.fifo_rf[0].fifo_rf_dffl/qout_r_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_subsys_mems/\u_expl_axi_icb2axi/u_sirv_gnrl_axi_buffer/o_axi_rdata_fifo/dp_gt0.fifo_rf[1].fifo_rf_dffl/qout_r_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_subsys_mems/\u_expl_axi_icb2axi/u_sirv_gnrl_axi_buffer/o_axi_bresp_fifo/dp_gt0.fifo_rf[0].fifo_rf_dffl/qout_r_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_subsys_mems/\u_expl_axi_icb2axi/u_sirv_gnrl_axi_buffer/o_axi_bresp_fifo/dp_gt0.fifo_rf[1].fifo_rf_dffl/qout_r_reg[1] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_itcm_ctrl/u_sram_icb_ctrl/u_byp_icb_cmd_buf/u_bypbuf_fifo/dp_gt0.wptr_vec_0_dfflrs/qout_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_ifu/\u_e203_ifu_ift2icb/u_e203_ifetch_rsp_bypbuf/u_bypbuf_fifo/dp_gt0.wptr_vec_0_dfflrs/qout_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_biu/\u_sirv_gnrl_icb_buffer/u_sirv_gnrl_cmd_fifo/dp_gt0.wptr_vec_0_dfflrs/qout_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_dtcm_ctrl/u_sram_icb_ctrl/u_byp_icb_cmd_buf/u_bypbuf_fifo/dp_gt0.rptr_vec_0_dfflrs/qout_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_biu/\u_sirv_gnrl_icb_buffer/u_sirv_gnrl_rsp_fifo/dp_gt0.wptr_vec_0_dfflrs/qout_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_itcm_ctrl/u_sram_icb_ctrl/u_byp_icb_cmd_buf/u_bypbuf_fifo/dp_gt0.rptr_vec_0_dfflrs/qout_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_ifu/\u_e203_ifu_ift2icb/u_e203_ifetch_rsp_bypbuf/u_bypbuf_fifo/dp_gt0.rptr_vec_0_dfflrs/qout_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_ifu/\u_e203_ifu_ifetch/pc_dfflr/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /\u_e203_itcm_ctrl/u_sram_icb_ctrl/u_byp_icb_cmd_buf/u_bypbuf_fifo/dp_gt0.wptr_vec_0_dfflrs/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_ifu/\u_e203_ifu_ift2icb/u_e203_ifetch_rsp_bypbuf/u_bypbuf_fifo/dp_gt0.wptr_vec_0_dfflrs/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_biu/\u_sirv_gnrl_icb_buffer/u_sirv_gnrl_cmd_fifo/dp_gt0.wptr_vec_0_dfflrs/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /\u_e203_dtcm_ctrl/u_sram_icb_ctrl/u_byp_icb_cmd_buf/u_bypbuf_fifo/dp_gt0.rptr_vec_0_dfflrs/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_biu/\u_sirv_gnrl_icb_buffer/u_sirv_gnrl_rsp_fifo/dp_gt0.wptr_vec_0_dfflrs/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /\u_e203_itcm_ctrl/u_sram_icb_ctrl/u_byp_icb_cmd_buf/u_bypbuf_fifo/dp_gt0.rptr_vec_0_dfflrs/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_ifu/\u_e203_ifu_ift2icb/u_e203_ifetch_rsp_bypbuf/u_bypbuf_fifo/dp_gt0.rptr_vec_0_dfflrs/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_ifu/\u_e203_ifu_ifetch/pc_dfflr/qout_r_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_subsys_mems/\u_sirv_mem_fab/u_i_icb_splt/splt_num_gt_1_gen.fifo_dp_1.u_sirv_gnrl_rspid_fifo/dp_gt_0.dat_dfflr/qout_r_reg[6] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_biu/\u_sirv_gnrl_icb_buffer/u_sirv_gnrl_cmd_fifo/dp_gt0.rptr_vec_0_dfflrs/qout_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_exu/u_e203_exu_csr/\epc_dfflr/qout_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_exu/u_e203_exu_csr/\cause_dfflr/qout_r_reg[30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_exu/u_e203_exu_csr/\mdvnob2b_dfflr/qout_r_reg[31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_exu/u_e203_exu_csr/\itcmnohold_dfflr/qout_r_reg[31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_exu/u_e203_exu_csr/\mcgstop_dfflr/qout_r_reg[31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_exu/u_e203_exu_csr/\counterstop_dfflr/qout_r_reg[31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_exu/u_e203_exu_csr/\mie_dfflr/qout_r_reg[31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_exu/u_e203_exu_oitf/\oitf_entries[0].rdfpu_dfflrs/qout_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_exu/u_e203_exu_oitf/\oitf_entries[1].rdfpu_dfflrs/qout_r_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_lsuagu/\icb_state_dfflr/qout_r_reg[3] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/u_e203_cpu_top/\u_e203_cpu/u_e203_core /u_e203_biu/\u_sirv_gnrl_icb_buffer/u_sirv_gnrl_rsp_fifo/dp_gt0.rptr_vec_0_dfflrs/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_biu/\u_sirv_gnrl_icb_buffer/u_sirv_gnrl_cmd_fifo/dp_gt0.rptr_vec_0_dfflrs/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_exu/u_e203_exu_csr/\epc_dfflr/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_exu/u_e203_exu_csr/\cause_dfflr/qout_r_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_exu/u_e203_exu_csr/\mdvnob2b_dfflr/qout_r_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_exu/u_e203_exu_csr/\itcmnohold_dfflr/qout_r_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_exu/u_e203_exu_csr/\mcgstop_dfflr/qout_r_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_exu/u_e203_exu_csr/\counterstop_dfflr/qout_r_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_exu/u_e203_exu_csr/\mie_dfflr/qout_r_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_exu/u_e203_exu_oitf/\oitf_entries[0].rdfpu_dfflrs/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_exu/u_e203_exu_oitf/\oitf_entries[1].rdfpu_dfflrs/qout_r_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_exu/u_e203_exu_alu/u_e203_exu_alu_lsuagu/\icb_state_dfflr/qout_r_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_maini_3/\u_e203_cpu_top/u_e203_cpu /u_e203_core/u_e203_biu/\u_sirv_gnrl_icb_buffer/u_sirv_gnrl_rsp_fifo/dp_gt0.rptr_vec_0_dfflrs/qout_r_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_topi_4/u_sirv_aon_top/\u_sirv_aon_wrapper/u_sirv_aon/u_sirv_pmu/por_reset_r_reg )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_topi_4/u_sirv_debug_module/\u_dm2dtm_cdc_tx/dat_dfflr/qout_r_reg[0] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (u_e203_subsys_topi_4/u_sirv_aon_top/\u_sirv_aon_wrapper/u_sirv_aon/u_queue_1/ram_mask_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_e203_subsys_topi_4/u_sirv_debug_module/\u_sirv_debug_csr/dpc_dfflr/qout_r_reg[0] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:07:46 ; elapsed = 00:09:47 . Memory (MB): peak = 1967.273 ; gain = 1458.645
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:07:26 ; elapsed = 00:10:13 . Memory (MB): peak = 1962.500 ; gain = 1451.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -5846,16 +5813,6 @@ ROM:
 +--------------+----------------------+---------------+----------------+
 
 
-Block RAM: Preliminary Mapping  Report (see note below)
-+------------------------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name                   | RTL Object                | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+------------------------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|sirv_sim_ram:                 | mem[1].non_last.mem_r_reg | 8 K x 64(READ_FIRST)   | W |   | 8 K x 64(WRITE_FIRST)  |   | R | Port A and B     | 0      | 16     | 
-|sirv_sim_ram__parameterized0: | mem[1].non_last.mem_r_reg | 16 K x 32(READ_FIRST)  | W |   | 16 K x 32(WRITE_FIRST) |   | R | Port A and B     | 0      | 16     | 
-+------------------------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-
-Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
-
 Distributed RAM: Preliminary Mapping  Report (see note below)
 +-----------------------------------------+------------------------------------+-----------+----------------------+--------------+
 |Module Name                              | RTL Object                         | Inference | Size (Depth x Width) | Primitives   | 
@@ -5868,38 +5825,6 @@ Note: The table above is a preliminary report that shows the Distributed RAMs at
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_4_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_4_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_5_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_5_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_6_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_6_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_7_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_47/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_7_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance u_e203_subsys_maini_3/u_e203_cpu_top/i_48/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +------+------------------------+------------+----------+
@@ -5907,7 +5832,7 @@ Report RTL Partitions:
 +------+------------------------+------------+----------+
 |1     |e203_subsys_perips__GB0 |           1|     22502|
 |2     |e203_subsys_perips__GB1 |           1|      4181|
-|3     |e203_subsys_main__GC0   |           1|     20244|
+|3     |e203_subsys_main__GC0   |           1|     20398|
 |4     |e203_subsys_top__GC0    |           1|      5036|
 |5     |system__GC0             |           1|       111|
 +------+------------------------+------------+----------+
@@ -5918,26 +5843,17 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'ip_mmcm/clk_out1' to pin 
 INFO: [Synth 8-5578] Moved timing constraint from pin 'ip_mmcm/clk_out2' to pin 'ip_mmcm/bbstub_clk_out2/O'
 INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:07:55 ; elapsed = 00:09:57 . Memory (MB): peak = 1967.273 ; gain = 1458.645
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:07:35 ; elapsed = 00:10:24 . Memory (MB): peak = 1962.500 ; gain = 1451.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:08:04 ; elapsed = 00:10:08 . Memory (MB): peak = 1967.273 ; gain = 1458.645
+Finished Timing Optimization : Time (s): cpu = 00:07:43 ; elapsed = 00:10:36 . Memory (MB): peak = 1962.500 ; gain = 1451.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-
-Block RAM: Final Mapping  Report
-+------------------------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name                   | RTL Object                | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+------------------------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|sirv_sim_ram:                 | mem[1].non_last.mem_r_reg | 8 K x 64(READ_FIRST)   | W |   | 8 K x 64(WRITE_FIRST)  |   | R | Port A and B     | 0      | 16     | 
-|sirv_sim_ram__parameterized0: | mem[1].non_last.mem_r_reg | 16 K x 32(READ_FIRST)  | W |   | 16 K x 32(WRITE_FIRST) |   | R | Port A and B     | 0      | 16     | 
-+------------------------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-
 
 Distributed RAM: Final Mapping  Report
 +-----------------------------------------+------------------------------------+-----------+----------------------+--------------+
@@ -5956,47 +5872,15 @@ Report RTL Partitions:
 |      |RTL Partition           |Replication |Instances |
 +------+------------------------+------------+----------+
 |1     |e203_subsys_perips__GB1 |           1|      4181|
-|2     |e203_subsys_main__GC0   |           1|     20244|
+|2     |e203_subsys_main__GC0   |           1|     20398|
 |3     |e203_subsys_top__GC0    |           1|      5036|
 |4     |system_GT0              |           1|     22605|
 +------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_4_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_4_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_5_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_5_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_6_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_6_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_7_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_itcm_ram/u_e203_itcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_7_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_2_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-6837] The timing for the instance dut/u_e203_subsys_top/u_e203_subsys_main/u_e203_cpu_top/u_e203_srams/u_e203_dtcm_ram/u_e203_dtcm_gnrl_ram/u_sirv_sim_ram/mem[1].non_last.mem_r_reg_3_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:08:21 ; elapsed = 00:10:28 . Memory (MB): peak = 1967.273 ; gain = 1458.645
+Finished Technology Mapping : Time (s): cpu = 00:07:59 ; elapsed = 00:10:56 . Memory (MB): peak = 1962.500 ; gain = 1451.082
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -6021,7 +5905,7 @@ INFO: [Synth 8-5365] Flop dut/u_e203_subsys_top/u_sirv_debug_module/jtag_dtm_gen
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:08:24 ; elapsed = 00:10:32 . Memory (MB): peak = 1967.273 ; gain = 1458.645
+Finished IO Insertion : Time (s): cpu = 00:08:02 ; elapsed = 00:11:01 . Memory (MB): peak = 1962.500 ; gain = 1451.082
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -6034,7 +5918,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:08:25 ; elapsed = 00:10:33 . Memory (MB): peak = 1967.273 ; gain = 1458.645
+Finished Renaming Generated Instances : Time (s): cpu = 00:08:02 ; elapsed = 00:11:01 . Memory (MB): peak = 1962.500 ; gain = 1451.082
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -6046,83 +5930,84 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:08:30 ; elapsed = 00:10:39 . Memory (MB): peak = 1967.273 ; gain = 1458.645
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:08:08 ; elapsed = 00:11:08 . Memory (MB): peak = 1962.500 ; gain = 1451.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:08:31 ; elapsed = 00:10:40 . Memory (MB): peak = 1967.273 ; gain = 1458.645
+Finished Renaming Generated Ports : Time (s): cpu = 00:08:08 ; elapsed = 00:11:08 . Memory (MB): peak = 1962.500 ; gain = 1451.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:08:31 ; elapsed = 00:10:40 . Memory (MB): peak = 1967.273 ; gain = 1458.645
+Finished Handling Custom Attributes : Time (s): cpu = 00:08:09 ; elapsed = 00:11:09 . Memory (MB): peak = 1962.500 ; gain = 1451.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:08:31 ; elapsed = 00:10:41 . Memory (MB): peak = 1967.273 ; gain = 1458.645
+Finished Renaming Generated Nets : Time (s): cpu = 00:08:09 ; elapsed = 00:11:09 . Memory (MB): peak = 1962.500 ; gain = 1451.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+--------------+----------+
-|      |BlackBox name |Instances |
-+------+--------------+----------+
-|1     |mmcm          |         1|
-|2     |reset_sys     |         1|
-+------+--------------+----------+
++------+-----------------+----------+
+|      |BlackBox name    |Instances |
++------+-----------------+----------+
+|1     |mmcm             |         1|
+|2     |reset_sys        |         1|
+|3     |blk_mem_gen_itcm |         2|
++------+-----------------+----------+
 
 Report Cell Usage: 
-+------+-----------+------+
-|      |Cell       |Count |
-+------+-----------+------+
-|1     |mmcm       |     1|
-|2     |reset_sys  |     1|
-|3     |BUFG       |     2|
-|4     |CARRY4     |   393|
-|5     |LUT1       |   303|
-|6     |LUT2       |   895|
-|7     |LUT3       |  1183|
-|8     |LUT4       |  1567|
-|9     |LUT5       |  2564|
-|10    |LUT6       |  6088|
-|11    |MUXF7      |   573|
-|12    |MUXF8      |   135|
-|13    |PULLUP     |     7|
-|14    |RAM32M     |     4|
-|15    |RAMB36E1   |    16|
-|16    |RAMB36E1_1 |    16|
-|17    |FDCE       |  8073|
-|18    |FDPE       |   415|
-|19    |FDRE       |  2754|
-|20    |FDSE       |     1|
-|21    |LD         |    24|
-|22    |IBUF       |     1|
-|23    |IOBUF      |    73|
-|24    |OBUF       |     4|
-+------+-----------+------+
++------+--------------------+------+
+|      |Cell                |Count |
++------+--------------------+------+
+|1     |blk_mem_gen_itcm    |     1|
+|2     |blk_mem_gen_itcm__2 |     1|
+|3     |mmcm                |     1|
+|4     |reset_sys           |     1|
+|5     |BUFG                |     2|
+|6     |CARRY4              |   393|
+|7     |LUT1                |   302|
+|8     |LUT2                |   897|
+|9     |LUT3                |  1123|
+|10    |LUT4                |  1637|
+|11    |LUT5                |  2550|
+|12    |LUT6                |  5999|
+|13    |MUXF7               |   573|
+|14    |MUXF8               |   135|
+|15    |PULLUP              |     7|
+|16    |RAM32M              |     4|
+|17    |FDCE                |  8073|
+|18    |FDPE                |   415|
+|19    |FDRE                |  2726|
+|20    |FDSE                |     1|
+|21    |LD                  |    24|
+|22    |IBUF                |     1|
+|23    |IOBUF               |    73|
+|24    |OBUF                |     4|
++------+--------------------+------+
 
 Report Instance Areas: 
 +------+-----------------------------------------------------------------------+-----------------------------------------+------+
 |      |Instance                                                               |Module                                   |Cells |
 +------+-----------------------------------------------------------------------+-----------------------------------------+------+
-|1     |top                                                                    |                                         | 25099|
-|2     |  dut                                                                  |e203_soc_top                             | 24959|
-|3     |    u_e203_subsys_top                                                  |e203_subsys_top                          | 24959|
-|4     |      u_e203_subsys_main                                               |e203_subsys_main                         | 22263|
-|5     |        u_e203_cpu_top                                                 |e203_cpu_top                             |  7509|
-|6     |          u_e203_cpu                                                   |e203_cpu                                 |  7471|
-|7     |            u_e203_core                                                |e203_core                                |  6575|
-|8     |              u_e203_biu                                               |e203_biu                                 |   459|
-|9     |                u_biu_icb_arbt                                         |sirv_gnrl_icb_arbt__parameterized0       |     3|
-|10    |                  \arbt_num_gt_1_gen.dp_1.u_sirv_gnrl_rspid_fifo       |sirv_gnrl_pipe_stage__parameterized1     |     3|
-|11    |                    \dp_gt_0.vld_dfflr                                 |sirv_gnrl_dfflr__parameterized0_540      |     3|
+|1     |top                                                                    |                                         | 25075|
+|2     |  dut                                                                  |e203_soc_top                             | 24962|
+|3     |    u_e203_subsys_top                                                  |e203_subsys_top                          | 24962|
+|4     |      u_e203_subsys_main                                               |e203_subsys_main                         | 22266|
+|5     |        u_e203_cpu_top                                                 |e203_cpu_top                             |  7512|
+|6     |          u_e203_cpu                                                   |e203_cpu                                 |  7361|
+|7     |            u_e203_core                                                |e203_core                                |  6562|
+|8     |              u_e203_biu                                               |e203_biu                                 |   458|
+|9     |                u_biu_icb_arbt                                         |sirv_gnrl_icb_arbt__parameterized0       |     2|
+|10    |                  \arbt_num_gt_1_gen.dp_1.u_sirv_gnrl_rspid_fifo       |sirv_gnrl_pipe_stage__parameterized1     |     2|
+|11    |                    \dp_gt_0.vld_dfflr                                 |sirv_gnrl_dfflr__parameterized0_540      |     2|
 |12    |                u_biu_icb_splt                                         |sirv_gnrl_icb_splt                       |    50|
 |13    |                  \splt_num_gt_1_gen.fifo_dp_1.u_sirv_gnrl_rspid_fifo  |sirv_gnrl_pipe_stage__parameterized2     |    50|
 |14    |                    \dp_gt_0.dat_dfflr                                 |sirv_gnrl_dffl__parameterized8           |    11|
@@ -6136,14 +6021,14 @@ Report Instance Areas:
 |22    |                    \dp_gt0.fifo_rf[0].fifo_rf_dffl                    |sirv_gnrl_dffl__parameterized7_533       |    33|
 |23    |                    \dp_gt0.vec_0_dfflrs                               |sirv_gnrl_dfflrs_534                     |     1|
 |24    |                    \dp_gt0.vec_31_dfflr                               |sirv_gnrl_dfflr__parameterized0_535      |     6|
-|25    |              u_e203_exu                                               |e203_exu                                 |  2911|
-|26    |                u_e203_exu_alu                                         |e203_exu_alu                             |   533|
+|25    |              u_e203_exu                                               |e203_exu                                 |  2901|
+|26    |                u_e203_exu_alu                                         |e203_exu_alu                             |   523|
 |27    |                  u_e203_exu_alu_dpath                                 |e203_exu_alu_dpath                       |   103|
 |28    |                    sbf_0_dffl                                         |sirv_gnrl_dffl_531                       |    51|
 |29    |                    sbf_1_dffl                                         |sirv_gnrl_dffl_532                       |    52|
-|30    |                  u_e203_exu_alu_lsuagu                                |e203_exu_alu_lsuagu                      |   121|
+|30    |                  u_e203_exu_alu_lsuagu                                |e203_exu_alu_lsuagu                      |   111|
 |31    |                    icb_leftover_err_dfflr                             |sirv_gnrl_dfflr__parameterized0_529      |     3|
-|32    |                    icb_state_dfflr                                    |sirv_gnrl_dfflr__parameterized6_530      |   118|
+|32    |                    icb_state_dfflr                                    |sirv_gnrl_dfflr__parameterized6_530      |   108|
 |33    |                  u_e203_exu_alu_muldiv                                |e203_exu_alu_muldiv                      |   267|
 |34    |                    exec_cnt_dfflr                                     |sirv_gnrl_dfflr_524                      |    52|
 |35    |                    flushed_dfflr                                      |sirv_gnrl_dfflr__parameterized0_525      |     5|
@@ -6233,12 +6118,12 @@ Report Instance Areas:
 |119   |                  \regfile[7].rfno0.rf_dffl                            |sirv_gnrl_dffl__parameterized2_479       |    96|
 |120   |                  \regfile[8].rfno0.rf_dffl                            |sirv_gnrl_dffl__parameterized2_480       |    32|
 |121   |                  \regfile[9].rfno0.rf_dffl                            |sirv_gnrl_dffl__parameterized2_481       |    32|
-|122   |              u_e203_ifu                                               |e203_ifu                                 |  2897|
-|123   |                u_e203_ifu_ifetch                                      |e203_ifu_ifetch                          |  2526|
+|122   |              u_e203_ifu                                               |e203_ifu                                 |  2903|
+|123   |                u_e203_ifu_ifetch                                      |e203_ifu_ifetch                          |  2532|
 |124   |                  dly_flush_dfflr                                      |sirv_gnrl_dfflr__parameterized0_437      |     2|
 |125   |                  ifu_err_dfflr                                        |sirv_gnrl_dfflr__parameterized0_438      |     2|
-|126   |                  ifu_hi_ir_dfflr                                      |sirv_gnrl_dfflr__parameterized3          |    64|
-|127   |                  ifu_lo_ir_dfflr                                      |sirv_gnrl_dfflr__parameterized3_439      |  2306|
+|126   |                  ifu_hi_ir_dfflr                                      |sirv_gnrl_dfflr__parameterized3          |    62|
+|127   |                  ifu_lo_ir_dfflr                                      |sirv_gnrl_dfflr__parameterized3_439      |  2314|
 |128   |                  ifu_pc_dfflr                                         |sirv_gnrl_dfflr__parameterized1_440      |    62|
 |129   |                  ifu_prdt_taken_dfflr                                 |sirv_gnrl_dfflr__parameterized0_441      |     1|
 |130   |                  ir_muldiv_b2b_dfflr                                  |sirv_gnrl_dfflr__parameterized0_442      |     1|
@@ -6269,30 +6154,30 @@ Report Instance Areas:
 |155   |                      \dp_gt0.fifo_rf[0].fifo_rf_dffl                  |sirv_gnrl_dffl                           |   215|
 |156   |                      \dp_gt0.vec_0_dfflrs                             |sirv_gnrl_dfflrs_435                     |     1|
 |157   |                      \dp_gt0.vec_31_dfflr                             |sirv_gnrl_dfflr__parameterized0_436      |     3|
-|158   |              u_e203_lsu                                               |e203_lsu                                 |   308|
-|159   |                u_e203_lsu_ctrl                                        |e203_lsu_ctrl                            |   308|
+|158   |              u_e203_lsu                                               |e203_lsu                                 |   300|
+|159   |                u_e203_lsu_ctrl                                        |e203_lsu_ctrl                            |   300|
 |160   |                  excl_addr_dffl                                       |sirv_gnrl_dfflr__parameterized1_420      |    32|
 |161   |                  excl_flg_dffl                                        |sirv_gnrl_dfflr__parameterized0_421      |     1|
-|162   |                  u_e203_lsu_splt_stage                                |sirv_gnrl_pipe_stage__parameterized0     |   263|
-|163   |                    \dp_gt_0.dat_dfflr                                 |sirv_gnrl_dffl__parameterized5           |   229|
+|162   |                  u_e203_lsu_splt_stage                                |sirv_gnrl_pipe_stage__parameterized0     |   255|
+|163   |                    \dp_gt_0.dat_dfflr                                 |sirv_gnrl_dffl__parameterized5           |   221|
 |164   |                    \dp_gt_0.vld_dfflr                                 |sirv_gnrl_dfflr__parameterized0_425      |    34|
 |165   |                  u_lsu_icb_arbt                                       |sirv_gnrl_icb_arbt                       |     5|
 |166   |                    \arbt_num_gt_1_gen.dp_1.u_sirv_gnrl_rspid_fifo     |sirv_gnrl_pipe_stage_422                 |     5|
 |167   |                      \dp_gt_0.dat_dfflr                               |sirv_gnrl_dffl__parameterized4_423       |     3|
 |168   |                      \dp_gt_0.vld_dfflr                               |sirv_gnrl_dfflr__parameterized0_424      |     2|
-|169   |            u_e203_dtcm_ctrl                                           |e203_dtcm_ctrl                           |   113|
-|170   |              u_dtcm_icb_arbt                                          |sirv_gnrl_icb_arbt__parameterized2       |     2|
-|171   |                \arbt_num_gt_1_gen.dp_1.u_sirv_gnrl_rspid_fifo         |sirv_gnrl_pipe_stage_418                 |     2|
-|172   |                  \dp_gt_0.vld_dfflr                                   |sirv_gnrl_dfflr__parameterized0_419      |     2|
-|173   |              u_sram_icb_ctrl                                          |sirv_sram_icb_ctrl__parameterized0       |   111|
-|174   |                u_byp_icb_cmd_buf                                      |sirv_gnrl_bypbuf__parameterized1         |   109|
-|175   |                  u_bypbuf_fifo                                        |sirv_gnrl_fifo__parameterized4           |   109|
-|176   |                    \dp_gt0.fifo_rf[0].fifo_rf_dffl                    |sirv_gnrl_dffl__parameterized10          |    83|
+|169   |            u_e203_dtcm_ctrl                                           |e203_dtcm_ctrl                           |   105|
+|170   |              u_dtcm_icb_arbt                                          |sirv_gnrl_icb_arbt__parameterized2       |     1|
+|171   |                \arbt_num_gt_1_gen.dp_1.u_sirv_gnrl_rspid_fifo         |sirv_gnrl_pipe_stage_418                 |     1|
+|172   |                  \dp_gt_0.vld_dfflr                                   |sirv_gnrl_dfflr__parameterized0_419      |     1|
+|173   |              u_sram_icb_ctrl                                          |sirv_sram_icb_ctrl__parameterized0       |   104|
+|174   |                u_byp_icb_cmd_buf                                      |sirv_gnrl_bypbuf__parameterized1         |   103|
+|175   |                  u_bypbuf_fifo                                        |sirv_gnrl_fifo__parameterized4           |   103|
+|176   |                    \dp_gt0.fifo_rf[0].fifo_rf_dffl                    |sirv_gnrl_dffl__parameterized10          |    51|
 |177   |                    \dp_gt0.vec_0_dfflrs                               |sirv_gnrl_dfflrs_416                     |     2|
-|178   |                    \dp_gt0.vec_31_dfflr                               |sirv_gnrl_dfflr__parameterized0_417      |    24|
-|179   |                u_sirv_1cyc_sram_ctrl                                  |sirv_1cyc_sram_ctrl__parameterized0      |     2|
-|180   |                  u_e1_stage                                           |sirv_gnrl_pipe_stage_414                 |     2|
-|181   |                    \dp_gt_0.vld_dfflr                                 |sirv_gnrl_dfflr__parameterized0_415      |     2|
+|178   |                    \dp_gt0.vec_31_dfflr                               |sirv_gnrl_dfflr__parameterized0_417      |    50|
+|179   |                u_sirv_1cyc_sram_ctrl                                  |sirv_1cyc_sram_ctrl__parameterized0      |     1|
+|180   |                  u_e1_stage                                           |sirv_gnrl_pipe_stage_414                 |     1|
+|181   |                    \dp_gt_0.vld_dfflr                                 |sirv_gnrl_dfflr__parameterized0_415      |     1|
 |182   |            u_e203_irq_sync                                            |e203_irq_sync                            |    10|
 |183   |              \master_gen.u_dbg_irq_sync                               |sirv_gnrl_sync_402                       |     3|
 |184   |                \sync_gen[0].i_is_0.sync_dffr                          |sirv_gnrl_dffr_412                       |     1|
@@ -6306,26 +6191,26 @@ Report Instance Areas:
 |192   |              \master_gen.u_tmr_irq_sync                               |sirv_gnrl_sync_405                       |     2|
 |193   |                \sync_gen[0].i_is_0.sync_dffr                          |sirv_gnrl_dffr_406                       |     1|
 |194   |                \sync_gen[1].i_is_not_0.sync_dffr                      |sirv_gnrl_dffr_407                       |     1|
-|195   |            u_e203_itcm_ctrl                                           |e203_itcm_ctrl                           |   147|
+|195   |            u_e203_itcm_ctrl                                           |e203_itcm_ctrl                           |   122|
 |196   |              ifu_holdup_dffl                                          |sirv_gnrl_dfflr__parameterized0_393      |     2|
-|197   |              u_itcm_icb_arbt                                          |sirv_gnrl_icb_arbt__parameterized1       |     4|
-|198   |                \arbt_num_gt_1_gen.dp_1.u_sirv_gnrl_rspid_fifo         |sirv_gnrl_pipe_stage_400                 |     4|
-|199   |                  \dp_gt_0.vld_dfflr                                   |sirv_gnrl_dfflr__parameterized0_401      |     4|
+|197   |              u_itcm_icb_arbt                                          |sirv_gnrl_icb_arbt__parameterized1       |     2|
+|198   |                \arbt_num_gt_1_gen.dp_1.u_sirv_gnrl_rspid_fifo         |sirv_gnrl_pipe_stage_400                 |     2|
+|199   |                  \dp_gt_0.vld_dfflr                                   |sirv_gnrl_dfflr__parameterized0_401      |     2|
 |200   |              u_itcm_icb_lsu2itcm_n2w                                  |sirv_gnrl_icb_n2w                        |     3|
 |201   |                \fifo_dp_1.u_sirv_gnrl_n2w_fifo                        |sirv_gnrl_pipe_stage                     |     3|
 |202   |                  \dp_gt_0.dat_dfflr                                   |sirv_gnrl_dffl__parameterized4_398       |     1|
 |203   |                  \dp_gt_0.vld_dfflr                                   |sirv_gnrl_dfflr__parameterized0_399      |     2|
-|204   |              u_sram_icb_ctrl                                          |sirv_sram_icb_ctrl                       |   138|
-|205   |                u_byp_icb_cmd_buf                                      |sirv_gnrl_bypbuf__parameterized0         |   129|
-|206   |                  u_bypbuf_fifo                                        |sirv_gnrl_fifo__parameterized3           |   129|
-|207   |                    \dp_gt0.fifo_rf[0].fifo_rf_dffl                    |sirv_gnrl_dffl__parameterized9           |   122|
-|208   |                    \dp_gt0.vec_0_dfflrs                               |sirv_gnrl_dfflrs_396                     |     2|
-|209   |                    \dp_gt0.vec_31_dfflr                               |sirv_gnrl_dfflr__parameterized0_397      |     5|
-|210   |                u_sirv_1cyc_sram_ctrl                                  |sirv_1cyc_sram_ctrl                      |     9|
-|211   |                  u_e1_stage                                           |sirv_gnrl_pipe_stage__parameterized3     |     9|
-|212   |                    \dp_gt_0.dat_dfflr                                 |sirv_gnrl_dffl__parameterized0_394       |     3|
-|213   |                    \dp_gt_0.vld_dfflr                                 |sirv_gnrl_dfflr__parameterized0_395      |     6|
-|214   |            u_e203_nice_core                                           |e203_subsys_nice_core                    |   623|
+|204   |              u_sram_icb_ctrl                                          |sirv_sram_icb_ctrl                       |   115|
+|205   |                u_byp_icb_cmd_buf                                      |sirv_gnrl_bypbuf__parameterized0         |    98|
+|206   |                  u_bypbuf_fifo                                        |sirv_gnrl_fifo__parameterized3           |    98|
+|207   |                    \dp_gt0.fifo_rf[0].fifo_rf_dffl                    |sirv_gnrl_dffl__parameterized9           |    55|
+|208   |                    \dp_gt0.vec_0_dfflrs                               |sirv_gnrl_dfflrs_396                     |     1|
+|209   |                    \dp_gt0.vec_31_dfflr                               |sirv_gnrl_dfflr__parameterized0_397      |    42|
+|210   |                u_sirv_1cyc_sram_ctrl                                  |sirv_1cyc_sram_ctrl                      |    17|
+|211   |                  u_e1_stage                                           |sirv_gnrl_pipe_stage__parameterized3     |    17|
+|212   |                    \dp_gt_0.dat_dfflr                                 |sirv_gnrl_dffl__parameterized0_394       |    14|
+|213   |                    \dp_gt_0.vld_dfflr                                 |sirv_gnrl_dfflr__parameterized0_395      |     3|
+|214   |            u_e203_nice_core                                           |e203_subsys_nice_core                    |   559|
 |215   |              \gen_rowbuf[0].rowbuf_dfflr                              |sirv_gnrl_dfflr__parameterized1_379      |    32|
 |216   |              \gen_rowbuf[1].rowbuf_dfflr                              |sirv_gnrl_dfflr__parameterized1_380      |    32|
 |217   |              \gen_rowbuf[2].rowbuf_dfflr                              |sirv_gnrl_dfflr__parameterized1_381      |    32|
@@ -6339,15 +6224,15 @@ Report Instance Areas:
 |225   |              rowsum_acc_dfflr                                         |sirv_gnrl_dfflr__parameterized1_389      |    33|
 |226   |              sbuf_cmd_cnt_dfflr                                       |sirv_gnrl_dfflr__parameterized2_390      |    37|
 |227   |              sbuf_cnt_dfflr                                           |sirv_gnrl_dfflr__parameterized2_391      |     6|
-|228   |              state_dfflr                                              |sirv_gnrl_dfflr__parameterized2_392      |   161|
+|228   |              state_dfflr                                              |sirv_gnrl_dfflr__parameterized2_392      |    97|
 |229   |            u_e203_reset_ctrl                                          |e203_reset_ctrl                          |     3|
-|230   |          u_e203_srams                                                 |e203_srams                               |    38|
-|231   |            u_e203_dtcm_ram                                            |e203_dtcm_ram                            |    16|
-|232   |              u_e203_dtcm_gnrl_ram                                     |sirv_gnrl_ram__parameterized0            |    16|
-|233   |                u_sirv_sim_ram                                         |sirv_sim_ram__parameterized0             |    16|
-|234   |            u_e203_itcm_ram                                            |e203_itcm_ram                            |    22|
-|235   |              u_e203_itcm_gnrl_ram                                     |sirv_gnrl_ram                            |    22|
-|236   |                u_sirv_sim_ram                                         |sirv_sim_ram                             |    22|
+|230   |          u_e203_srams                                                 |e203_srams                               |   146|
+|231   |            u_e203_dtcm_ram                                            |e203_dtcm_ram                            |    68|
+|232   |              u_e203_dtcm_gnrl_ram                                     |sirv_gnrl_ram__parameterized0            |    68|
+|233   |                u_sirv_sim_ram                                         |sirv_sim_ram__parameterized0             |    68|
+|234   |            u_e203_itcm_ram                                            |e203_itcm_ram                            |    78|
+|235   |              u_e203_itcm_gnrl_ram                                     |sirv_gnrl_ram                            |    78|
+|236   |                u_sirv_sim_ram                                         |sirv_sim_ram                             |    78|
 |237   |        u_e203_subsys_clint                                            |e203_subsys_clint                        |   221|
 |238   |          u_aon_rtctoggle_sync                                         |sirv_gnrl_sync_375                       |     3|
 |239   |            \sync_gen[0].i_is_0.sync_dffr                              |sirv_gnrl_dffr_377                       |     1|
@@ -6852,17 +6737,17 @@ Report Instance Areas:
 |738   |  low_clk                                                              |clkdivider                               |    18|
 +------+-----------------------------------------------------------------------+-----------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:08:31 ; elapsed = 00:10:41 . Memory (MB): peak = 1967.273 ; gain = 1458.645
+Finished Writing Synthesis Report : Time (s): cpu = 00:08:09 ; elapsed = 00:11:09 . Memory (MB): peak = 1962.500 ; gain = 1451.082
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:07:56 ; elapsed = 00:10:27 . Memory (MB): peak = 1967.273 ; gain = 1275.000
-Synthesis Optimization Complete : Time (s): cpu = 00:08:32 ; elapsed = 00:10:41 . Memory (MB): peak = 1967.273 ; gain = 1458.645
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:07:33 ; elapsed = 00:10:53 . Memory (MB): peak = 1962.500 ; gain = 1269.176
+Synthesis Optimization Complete : Time (s): cpu = 00:08:09 ; elapsed = 00:11:10 . Memory (MB): peak = 1962.500 ; gain = 1451.082
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1234 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1202 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1967.273 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1962.500 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 101 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 73 instances
@@ -6870,13 +6755,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-618 Infos, 122 Warnings, 0 Critical Warnings and 0 Errors encountered.
+548 Infos, 121 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:08:44 ; elapsed = 00:10:58 . Memory (MB): peak = 1967.273 ; gain = 1673.602
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1967.273 ; gain = 0.000
+synth_design: Time (s): cpu = 00:08:22 ; elapsed = 00:11:28 . Memory (MB): peak = 1962.500 ; gain = 1669.410
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1962.500 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/e203_35T/e203_35T/e203_35T.runs/synth_1/system.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1967.273 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1962.500 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file system_utilization_synth.rpt -pb system_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Apr  2 10:56:28 2022...
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  5 19:15:53 2022...

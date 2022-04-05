@@ -592,8 +592,9 @@ D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:120 (discrimi
 D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:119 (discriminator 3)
     for (int i = 0; i < 20; i ++) {
 80000168:	fe941be3          	bne	s0,s1,8000015e <main+0xaa>
-D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:123
+D:\e203_35T\nuclei_project\hello_world\Debug/../application/main.c:124
     }
+
     return 0;
 }
 8000016c:	50b2                	lw	ra,44(sp)

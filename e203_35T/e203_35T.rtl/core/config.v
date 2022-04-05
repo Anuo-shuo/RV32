@@ -14,7 +14,7 @@
  limitations under the License.                                          
  */                                                                      
                                                                          
-`define FPGA_SOURCE                                                                         
+                                                                         
                                                                          
 
 `define E203_CFG_DEBUG_HAS_JTAG
