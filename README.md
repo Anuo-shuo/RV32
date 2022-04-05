@@ -1,4 +1,7 @@
-# E203 in ARTIX 7A35T
+******
+# E203 in Artix 7A35T
+******
+## Author@Anuo
 ******
 2022.03.31 完成工程移植，可以在NucleiStudio中烧录（断电消失）
 ******
