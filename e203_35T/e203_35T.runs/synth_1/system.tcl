@@ -17,8 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 2
-set_param xicom.use_bs_reader 1
 set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a35tcsg324-1
 
@@ -33,7 +31,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/e203_35T/e203_35T/e203_35T.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files d:/e203_35T/e203_35T/programmer.coe
+add_files D:/e203_35T/e203_35T/programmer.coe
 read_verilog D:/e203_35T/e203_35T/e203_35T.rtl/core/e203_defines.v
 set_property file_type "Verilog Header" [get_files D:/e203_35T/e203_35T/e203_35T.rtl/core/e203_defines.v]
 set_property is_global_include true [get_files D:/e203_35T/e203_35T/e203_35T.rtl/core/e203_defines.v]
@@ -176,7 +174,7 @@ read_verilog -library xil_defaultlib {
   D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_gnrl_xchecker.v
   D:/e203_35T/e203_35T/e203_35T.rtl/core/e203_extend_csr.v
   D:/e203_35T/e203_35T/e203_35T.sim/tb_top.v
-  D:/e203_35T/e203_35T/e203_35T.rtl/tb_system.v
+  D:/e203_35T/e203_35T/e203_35T.rtl/general/sirv_sim_ram_itcm.v
 }
 read_ip -quiet D:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/mmcm/mmcm.xci
 set_property used_in_implementation false [get_files -all d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/mmcm/mmcm_board.xdc]
@@ -191,11 +189,8 @@ set_property used_in_implementation false [get_files -all d:/e203_35T/e203_35T/e
 read_ip -quiet D:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
 set_property used_in_implementation false [get_files -all d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
 
-read_ip -quiet d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_itcm/blk_mem_gen_itcm.xci
+read_ip -quiet D:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_itcm/blk_mem_gen_itcm.xci
 set_property used_in_implementation false [get_files -all d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_itcm/blk_mem_gen_itcm_ooc.xdc]
-
-read_ip -quiet d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_dtcm/blk_mem_gen_dtcm.xci
-set_property used_in_implementation false [get_files -all d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_dtcm/blk_mem_gen_dtcm_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

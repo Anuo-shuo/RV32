@@ -45,7 +45,7 @@ module e203_itcm_ram(
 );
 
  
-  sirv_gnrl_ram #(
+  sirv_sim_ram_itcm #(
       `ifndef E203_HAS_ECC//{
     .FORCE_X2ZERO(0),
       `endif//}
@@ -54,11 +54,11 @@ module e203_itcm_ram(
     .MW(`E203_ITCM_RAM_MW),
     .AW(`E203_ITCM_RAM_AW) 
   ) u_e203_itcm_gnrl_ram(
-  .sd  (sd  ),
-  .ds  (ds  ),
-  .ls  (ls  ),
+//  .sd  (sd  ),
+//  .ds  (ds  ),
+//  .ls  (ls  ),
 
-  .rst_n (rst_n ),
+//  .rst_n (rst_n ),
   .clk (clk ),
   .cs  (cs  ),
   .we  (we  ),
@@ -67,6 +67,8 @@ module e203_itcm_ram(
   .wem (wem ),
   .dout(dout)
   );
+  
+
                                                       
 endmodule
   `endif//}

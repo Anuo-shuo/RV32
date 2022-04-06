@@ -67,7 +67,6 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -80,8 +79,7 @@ set rc [catch {
   read_ip -quiet D:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/mmcm/mmcm.xci
   read_ip -quiet D:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/reset_sys/reset_sys.xci
   read_ip -quiet D:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
-  read_ip -quiet d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_itcm/blk_mem_gen_itcm.xci
-  read_ip -quiet d:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_dtcm/blk_mem_gen_dtcm.xci
+  read_ip -quiet D:/e203_35T/e203_35T/e203_35T.srcs/sources_1/ip/blk_mem_gen_itcm/blk_mem_gen_itcm.xci
   read_xdc D:/e203_35T/e203_35T/e203.xdc
   link_design -top system -part xc7a35tcsg324-1
   close_msg_db -file init_design.pb

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1649156500">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1649219405">
   <File Type="BITSTR-BMM" Name="system_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="system_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="system_timing_summary_init.rpt"/>
@@ -1044,16 +1044,16 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/e203_35T.rtl/tb_system.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/programmer.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/e203_35T.rtl/general/sirv_sim_ram_itcm.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -1107,7 +1107,6 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="mmcm"/>
   <BlockFileSet Type="BlockSrcs" Name="reset_sys"/>
-  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_dtcm"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_itcm"/>
 </GenRun>
