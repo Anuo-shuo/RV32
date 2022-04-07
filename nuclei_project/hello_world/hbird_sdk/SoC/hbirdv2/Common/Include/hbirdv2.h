@@ -211,6 +211,9 @@ typedef enum EXCn {
 /****************************************************************************
  * Platform definitions
  *****************************************************************************/
+// _AC  X##Y  连接两个值
+// UL 无符号整型
+
 // IOF Mappings
 #define IOF_PWM0_MASK              _AC(0x0000000F, UL)
 #define IOF_PWM0_CH0_MASK          _AC(0x00000001, UL)
@@ -262,6 +265,9 @@ typedef enum EXCn {
 
 #define GPIO_BIT_ALL_ZERO           (0x0)
 #define GPIO_BIT_ALL_ONE            (0xFFFFFFFF)
+
+
+//__IOM volatile变量 与const相反
 
 /**
   * @brief GPIO

@@ -3,7 +3,7 @@
 #define _HBIRD_SDK_SOC_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 #include "hbirdv2.h"

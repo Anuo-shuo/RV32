@@ -1,6 +1,10 @@
 #include "hbirdv2.h"
 #include "hbirdv2_gpio.h"
 
+//__RARELY 大概率为假 优化分支预测
+//->指针 结构体下某变量的值
+//NULL野指针
+
 int32_t gpio_iof_config(GPIO_TypeDef *gpio, uint32_t mask)
 {
     if (__RARELY(gpio == NULL)) {
