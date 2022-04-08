@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.c \
 ../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c \
 ../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_i2c.c \
 ../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_pwm.c \
@@ -12,6 +13,7 @@ C_SRCS += \
 ../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/htif.c 
 
 OBJS += \
+./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o \
 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.o \
 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_i2c.o \
 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_pwm.o \
@@ -20,6 +22,7 @@ OBJS += \
 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/htif.o 
 
 C_DEPS += \
+./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.d \
 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.d \
 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_i2c.d \
 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_pwm.d \
@@ -32,7 +35,7 @@ C_DEPS += \
 hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/%.o: ../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GNU RISC-V Cross C Compiler'
-	riscv-nuclei-elf-gcc -march=rv32imac -mabi=ilp32 -mcmodel=medany -mno-save-restore -O2 -ffunction-sections -fdata-sections -fno-common  -g -D__IDE_RV_CORE=e203 -DSOC_HBIRD -DDOWNLOAD_MODE=DOWNLOAD_MODE_ILM -DDOWNLOAD_MODE_STRING=\"ILM\" -DBOARD_MCU200T -I"D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include" -I"D:\e203_35T\nuclei_project\hello_world\hbird_sdk\SoC\hbirdv2\Common\Include" -I"D:\e203_35T\nuclei_project\hello_world\hbird_sdk\SoC\hbirdv2\Board\mcu200t\Include" -I"D:\e203_35T\nuclei_project\hello_world\application" -std=gnu11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "$@" "$<"
+	riscv-nuclei-elf-gcc -march=rv32imac -mabi=ilp32 -mcmodel=medany -mno-save-restore -O2 -ffunction-sections -fdata-sections -fno-common  -g -D__IDE_RV_CORE=e203 -DSOC_HBIRD -DDOWNLOAD_MODE=DOWNLOAD_MODE_FLASH -DDOWNLOAD_MODE_STRING=\"FLASH\" -DBOARD_MCU200T -DVECTOR_TABLE_REMAPPED -I"D:\e203_35T\nuclei_project\hello_world\hbird_sdk\NMSIS\Core\Include" -I"D:\e203_35T\nuclei_project\hello_world\hbird_sdk\SoC\hbirdv2\Common\Include" -I"D:\e203_35T\nuclei_project\hello_world\hbird_sdk\SoC\hbirdv2\Board\mcu200t\Include" -I"D:\e203_35T\nuclei_project\hello_world\application" -std=gnu11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

@@ -329,6 +329,75 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.o
  .data          0x0000000000000000        0x0 ./hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.o
  .bss           0x0000000000000000        0x0 ./hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.o
+ .text          0x0000000000000000        0x0 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .data          0x0000000000000000        0x0 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .bss           0x0000000000000000        0x0 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_deinit
+                0x0000000000000000       0x40 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_struct_para_init
+                0x0000000000000000       0x22 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_init
+                0x0000000000000000       0x94 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_circulation_enable
+                0x0000000000000000       0x24 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_circulation_disable
+                0x0000000000000000       0x24 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_memory_to_memory_enable
+                0x0000000000000000       0x24 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_memory_to_memory_disable
+                0x0000000000000000       0x26 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_channel_enable
+                0x0000000000000000       0x24 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_channel_disable
+                0x0000000000000000       0x22 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_periph_address_config
+                0x0000000000000000       0x1e ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_memory_address_config
+                0x0000000000000000       0x1e ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_transfer_number_config
+                0x0000000000000000       0x22 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_transfer_number_get
+                0x0000000000000000       0x1e ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_priority_config
+                0x0000000000000000       0x28 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_memory_width_config
+                0x0000000000000000       0x2a ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_periph_width_config
+                0x0000000000000000       0x26 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_memory_increase_enable
+                0x0000000000000000       0x24 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_memory_increase_disable
+                0x0000000000000000       0x24 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_periph_increase_enable
+                0x0000000000000000       0x24 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_periph_increase_disable
+                0x0000000000000000       0x24 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_transfer_direction_config
+                0x0000000000000000       0x2c ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_flag_get
+                0x0000000000000000       0x14 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_flag_clear
+                0x0000000000000000        0xe ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_interrupt_flag_get
+                0x0000000000000000       0x6e ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_interrupt_flag_clear
+                0x0000000000000000        0xe ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_interrupt_enable
+                0x0000000000000000       0x22 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .text.dma_interrupt_disable
+                0x0000000000000000       0x26 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .debug_info    0x0000000000000000      0xd71 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .debug_abbrev  0x0000000000000000      0x20c ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .debug_loc     0x0000000000000000      0xbad ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .debug_aranges
+                0x0000000000000000       0xe8 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .debug_ranges  0x0000000000000000      0x2e8 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .debug_line    0x0000000000000000     0x156d ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .debug_str     0x0000000000000000      0x5b4 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .comment       0x0000000000000000       0x13 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .debug_frame   0x0000000000000000      0x1c0 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
+ .riscv.attributes
+                0x0000000000000000       0x2b ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
  .text          0x0000000000000000        0x0 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.o
  .data          0x0000000000000000        0x0 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.o
  .bss           0x0000000000000000        0x0 ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.o
@@ -785,6 +854,7 @@ LOAD ./hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/wait.o
 LOAD ./hbird_sdk/SoC/hbirdv2/Common/Source/Stubs/write.o
 LOAD ./hbird_sdk/SoC/hbirdv2/Common/Source/GCC/intexc_hbirdv2.o
 LOAD ./hbird_sdk/SoC/hbirdv2/Common/Source/GCC/startup_hbirdv2.o
+LOAD ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/anuo_dma.o
 LOAD ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.o
 LOAD ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_i2c.o
 LOAD ./hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_pwm.o

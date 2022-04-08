@@ -987,75 +987,76 @@ D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Sou
 
 800002e4 <gpio_iof_config>:
 gpio_iof_config():
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:5
-#include "hbirdv2.h"
-#include "hbirdv2_gpio.h"
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:9
+//__RARELY 大概率为假 优化分支预测
+//->指针 结构体下某变量的值
+//NULL野指针
 
 int32_t gpio_iof_config(GPIO_TypeDef *gpio, uint32_t mask)
 {
 800002e4:	87aa                	mv	a5,a0
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:6
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:10
     if (__RARELY(gpio == NULL)) {
 800002e6:	c511                	beqz	a0,800002f2 <gpio_iof_config+0xe>
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:9
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:13
         return -1;
     }
     gpio->IOFCFG |= mask;
 800002e8:	4d58                	lw	a4,28(a0)
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:11
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:15
 
     return 0;
 800002ea:	4501                	li	a0,0
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:9
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:13
     gpio->IOFCFG |= mask;
 800002ec:	8dd9                	or	a1,a1,a4
 800002ee:	cfcc                	sw	a1,28(a5)
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:11
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:15
     return 0;
 800002f0:	8082                	ret
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:7
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:11
         return -1;
 800002f2:	557d                	li	a0,-1
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:12
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:16
 }
 800002f4:	8082                	ret
 
 800002f6 <gpio_enable_output>:
 gpio_enable_output():
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:16
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:20
 
 
 int32_t gpio_enable_output(GPIO_TypeDef *gpio, uint32_t mask)
 {
 800002f6:	87aa                	mv	a5,a0
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:17
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:21
     if (__RARELY(gpio == NULL)) {
 800002f8:	c511                	beqz	a0,80000304 <gpio_enable_output+0xe>
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:20
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:24
         return -1;
     }
     gpio->PADDIR |= mask;
 800002fa:	4118                	lw	a4,0(a0)
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:21
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:25
     return 0;
 800002fc:	4501                	li	a0,0
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:20
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:24
     gpio->PADDIR |= mask;
 800002fe:	8dd9                	or	a1,a1,a4
 80000300:	c38c                	sw	a1,0(a5)
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:21
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:25
     return 0;
 80000302:	8082                	ret
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:18
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:22
         return -1;
 80000304:	557d                	li	a0,-1
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:22
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:26
 }
 80000306:	8082                	ret
 
 80000308 <gpio_toggle>:
 gpio_toggle():
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:48
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:52
     }
     return 0;
 }
@@ -1063,28 +1064,28 @@ D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Sou
 int32_t gpio_toggle(GPIO_TypeDef *gpio, uint32_t mask)
 {
 80000308:	87aa                	mv	a5,a0
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:49
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:53
     if (__RARELY(gpio == NULL)) {
 8000030a:	c511                	beqz	a0,80000316 <gpio_toggle+0xe>
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:52
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:56
         return -1;
     }
     gpio->PADOUT = (mask ^ gpio->PADOUT);
 8000030c:	4518                	lw	a4,8(a0)
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:53
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:57
     return 0;
 8000030e:	4501                	li	a0,0
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:52
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:56
     gpio->PADOUT = (mask ^ gpio->PADOUT);
 80000310:	8db9                	xor	a1,a1,a4
 80000312:	c78c                	sw	a1,8(a5)
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:53
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:57
     return 0;
 80000314:	8082                	ret
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:50
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:54
         return -1;
 80000316:	557d                	li	a0,-1
-D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:54
+D:\e203_35T\nuclei_project\hello_world\Debug/../hbird_sdk/SoC/hbirdv2/Common/Source/Drivers/hbirdv2_gpio.c:58
 }
 80000318:	8082                	ret
 

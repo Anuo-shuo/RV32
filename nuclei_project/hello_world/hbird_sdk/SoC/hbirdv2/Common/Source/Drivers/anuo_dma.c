@@ -1,4 +1,4 @@
-
+#include "hbirdv2.h"
 #include "anuo_dma.h"
 
 #define DMA_WRONG_HANDLE        while(1){}
